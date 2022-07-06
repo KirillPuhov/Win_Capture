@@ -65,6 +65,8 @@
       <DependentUpon>WindowControlBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window\Command\RelayCommand.cs" />
+    <Compile Include="Window\DI\Container.cs" />
+    <Compile Include="Window\DI\IDiContainer.cs" />
     <Compile Include="Window\RayeWindow.cs" />
     <Compile Include="Window\ViewModel\MainViewModel.cs" />
     <Page Include="Controls\Button.xaml">

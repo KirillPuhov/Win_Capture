@@ -1,17 +1,16 @@
-﻿using System.ComponentModel;
+﻿using AppUi.Window.DI;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace AppUi.Window.ViewModel
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-
-        
         #region ctor
 
-        public MainViewModel()
+        public MainViewModel(IDiContainer container)
         {
-
+            //_depndence = container.Navigate<IDiContainer>("Container");
         }
 
         #endregion

@@ -1,4 +1,5 @@
 ﻿using AppUi.Window;
+using AppUi.Window.DI;
 using AppUi.Window.ViewModel;
 
 namespace AppUi
@@ -12,7 +13,11 @@ namespace AppUi
         {
             InitializeComponent();
 
-            DataContext = new MainViewModel();
+            var _container = new Container();
+
+            _container.Register<IDiContainer, Container>(new Container(), "Container");
+
+            DataContext = new MainViewModel(_container);
         }
     }
 }
