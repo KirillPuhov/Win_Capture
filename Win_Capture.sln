@@ -3,9 +3,39 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{62B2DE18-7B58-48F5-9612-19F0BCC32852}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F5060B72-CEA3-48D1-97F5-E18859BA3A88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{F848BB46-A23B-48D4-8433-8621760A8846}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{BE80693C-44DA-469B-B100-C8B72B7AE5FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppUi", "AppUi\AppUi.csproj", "{95C60F52-9126-4D3C-85B9-C5960EC1A731}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE80693C-44DA-469B-B100-C8B72B7AE5FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE80693C-44DA-469B-B100-C8B72B7AE5FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE80693C-44DA-469B-B100-C8B72B7AE5FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE80693C-44DA-469B-B100-C8B72B7AE5FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95C60F52-9126-4D3C-85B9-C5960EC1A731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C60F52-9126-4D3C-85B9-C5960EC1A731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C60F52-9126-4D3C-85B9-C5960EC1A731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C60F52-9126-4D3C-85B9-C5960EC1A731}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F5060B72-CEA3-48D1-97F5-E18859BA3A88} = {62B2DE18-7B58-48F5-9612-19F0BCC32852}
+		{F848BB46-A23B-48D4-8433-8621760A8846} = {62B2DE18-7B58-48F5-9612-19F0BCC32852}
+		{BE80693C-44DA-469B-B100-C8B72B7AE5FD} = {F5060B72-CEA3-48D1-97F5-E18859BA3A88}
+		{95C60F52-9126-4D3C-85B9-C5960EC1A731} = {F848BB46-A23B-48D4-8433-8621760A8846}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A977BBEB-4632-4DAE-88D4-85619E4CCE19}

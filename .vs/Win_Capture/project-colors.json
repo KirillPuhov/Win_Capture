@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d7e86e4d-dc53-4269-a7e1-f2d75adb43aa": {
+      "ProjectGuid": "d7e86e4d-dc53-4269-a7e1-f2d75adb43aa",
+      "DisplayName": "Win_Capture.BL",
+      "ColorIndex": 0
+    },
+    "1d8e161c-8eb2-472b-bb2e-643a3da43106": {
+      "ProjectGuid": "1d8e161c-8eb2-472b-bb2e-643a3da43106",
+      "DisplayName": "Win_Capture.BL",
+      "ColorIndex": 1
+    },
+    "be80693c-44da-469b-b100-c8b72b7ae5fd": {
+      "ProjectGuid": "be80693c-44da-469b-b100-c8b72b7ae5fd",
+      "DisplayName": "Domain",
+      "ColorIndex": 2
+    },
+    "95c60f52-9126-4d3c-85b9-c5960ec1a731": {
+      "ProjectGuid": "95c60f52-9126-4d3c-85b9-c5960ec1a731",
+      "DisplayName": "AppUi",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

@@ -1,0 +1,2 @@
+D:\GitHub\Win_Capture\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+D:\GitHub\Win_Capture\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
