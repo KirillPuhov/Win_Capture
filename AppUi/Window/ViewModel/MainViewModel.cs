@@ -1,4 +1,6 @@
-﻿using AppUi.Window.DI;
+﻿using AppUi.Services;
+using AppUi.Window.Command;
+using AppUi.Window.DI;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -6,14 +8,33 @@ namespace AppUi.Window.ViewModel
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        private readonly IDiContainer _container;
+
+        private readonly IDialogService _dialogService;
+
         #region ctor
 
         public MainViewModel(IDiContainer container)
         {
-            //_depndence = container.Navigate<IDiContainer>("Container");
+            _container = container;
+
+            _dialogService = _container.Navigate<IDialogService>("DialogService");
         }
 
         #endregion
+
+        private RelayCommand _open;
+        public RelayCommand Open
+        {
+            get 
+            {
+                return _open ??
+                    (_open = new RelayCommand(obj => 
+                    {
+                        _dialogService.ShowInfo("Not working yet");
+                    }));
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

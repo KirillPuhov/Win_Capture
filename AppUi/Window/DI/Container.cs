@@ -11,10 +11,15 @@ namespace AppUi.Window.DI
         public TDependence Navigate<TDependence>(string navigationKey) where TDependence : class
         {
             var obj = _keyValuePairs[navigationKey];
-            var ogt = obj.GetType();
+            var dependence = (TDependence)Activator.CreateInstance(obj.GetType());
 
+            return dependence;
+        }
 
-            var dependence = (TDependence)Activator.CreateInstance(ogt);
+        public TDependence Navigate<TDependence>(string navigationKey, object arg = null) where TDependence : class
+        {
+            var obj = _keyValuePairs[navigationKey];
+            var dependence = (TDependence)Activator.CreateInstance(obj.GetType(), arg);
 
             return dependence;
         }

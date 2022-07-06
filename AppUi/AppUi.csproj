@@ -64,6 +64,8 @@
     <Compile Include="Controls\Window\WindowControlBox.xaml.cs">
       <DependentUpon>WindowControlBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\DialogService.cs" />
+    <Compile Include="Services\IDialogService.cs" />
     <Compile Include="Window\Command\RelayCommand.cs" />
     <Compile Include="Window\DI\Container.cs" />
     <Compile Include="Window\DI\IDiContainer.cs" />
@@ -134,8 +136,6 @@
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
