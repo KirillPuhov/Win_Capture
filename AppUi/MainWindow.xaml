@@ -1,12 +1,49 @@
-﻿<Window x:Class="AppUi.MainWindow"
+﻿<window:RayeWindow 
+        x:Class="AppUi.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppUi"
         mc:Ignorable="d"
-        Title="Capture" Height="550" Width="420">
-    <Grid>
+        xmlns:window="clr-namespace:AppUi.Window"
+        Title="RayeUI" Width="420" Height="550" WindowStartupLocation="CenterScreen" IsHeaderTextVisible="False" WindowState="Normal">
+    <window:RayeWindow.HeaderContent>
 
-    </Grid>
-</Window>
+        <Grid HorizontalAlignment="Left">
+
+            <Grid.ColumnDefinitions>
+                
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Style="{DynamicResource WindowButtonStyle}" Width="35" Background="Transparent">
+                <Viewbox Width="24" Height="24" Margin="0,3,0,0" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    <Canvas Height="32" Width="32">
+                        <Canvas>
+                            <Path Fill="#484848" Data="M16.9510797,2.50304787 C17.7274884,2.50304787 18.4490393,2.9033378 18.8600157,3.56205529 L20.3810589,6 L22.75,6 C24.5449254,6 26,7.45507456 26,9.25 L26,21.75 C26,23.5449254 24.5449254,25 22.75,25 L5.25,25 C3.45507456,25 2,23.5449254 2,21.75 L2,9.25 C2,7.45507456 3.45507456,6 5.25,6 L7.81851226,6 L9.2010861,3.62210494 C9.60389995,2.92930357 10.3448058,2.50304787 11.1462,2.50304787 L16.9510797,2.50304787 Z M14,9.50268415 C10.9624339,9.50268415 8.5,11.965118 8.5,15.0026842 C8.5,18.0402503 10.9624339,20.5026842 14,20.5026842 C17.0375661,20.5026842 19.5,18.0402503 19.5,15.0026842 C19.5,11.965118 17.0375661,9.50268415 14,9.50268415 Z M14,11.0026842 C16.209139,11.0026842 18,12.7935452 18,15.0026842 C18,17.2118232 16.209139,19.0026842 14,19.0026842 C11.790861,19.0026842 10,17.2118232 10,15.0026842 C10,12.7935452 11.790861,11.0026842 14,11.0026842 Z"/>
+                        </Canvas>
+                    </Canvas>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="1" Style="{DynamicResource WindowButtonStyle}" Width="35" Background="Transparent">
+                <Ellipse Fill="#C54949" Width="17" Height="17"/>
+            </Button>
+            <Button Grid.Column="2" Style="{DynamicResource WindowButtonStyle}" Width="35" Background="Transparent">
+                <Viewbox Height="18" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    <Canvas Height="300.003" Width="300.003">
+                        <Canvas Height="300.003" Width="300.003">
+                            <Canvas>
+                                <Path Fill="#484848" Data="M150.001,0c-82.838,0-150,67.159-150,150c0,82.838,67.162,150.003,150,150.003c82.843,0,150-67.165,150-150.003    C300.001,67.159,232.846,0,150.001,0z M134.41,194.538c0,9.498-7.7,17.198-17.198,17.198s-17.198-7.7-17.198-17.198V105.46    c0-9.498,7.7-17.198,17.198-17.198s17.198,7.7,17.198,17.198V194.538z M198.955,194.538c0,9.498-7.701,17.198-17.198,17.198    c-9.498,0-17.198-7.7-17.198-17.198V105.46c0-9.498,7.7-17.198,17.198-17.198s17.198,7.7,17.198,17.198V194.538z" />
+                            </Canvas>
+                        </Canvas>
+                    </Canvas>
+                </Viewbox>
+            </Button>
+        </Grid>
+    </window:RayeWindow.HeaderContent>
+</window:RayeWindow>
