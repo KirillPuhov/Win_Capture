@@ -7,7 +7,5 @@ namespace Domain.Factories.Abstract_factory
         public abstract IOutFile GetOutFile();
 
         public abstract string GetInfo();
-
-        protected abstract void Create();
     }
 }

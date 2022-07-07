@@ -13,9 +13,6 @@ namespace Domain.Factories
         private readonly string _fileName;
         private readonly string _path;
 
-        private double _size;
-        private dynamic _data;
-
         public ScreenvideoFactory(string fileName, string path)
         {
             //TODO: Проверка fileName и path
@@ -23,9 +20,7 @@ namespace Domain.Factories
             _fileName = fileName;
             _path = path;
 
-            Create();
-
-            _output = new ScreenvideoFile(_fileName, _size, _data, DateTime.Now, _path);
+            _output = new ScreenvideoFile(_fileName, DateTime.Now, _path);
         }
 
         public override string GetInfo()
@@ -36,11 +31,6 @@ namespace Domain.Factories
         public override IOutFile GetOutFile()
         {
             return _output;
-        }
-
-        protected override void Create()
-        {
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)

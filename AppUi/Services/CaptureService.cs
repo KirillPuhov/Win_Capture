@@ -21,6 +21,7 @@ namespace AppUi.Services
 
                 case CaptureType.Screenvideo:
                     return new ScreenvideoFactory(fileName, path);
+
                 default:
                     return new ScreenshotFactory(fileName, path);
             }

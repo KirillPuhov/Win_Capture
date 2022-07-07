@@ -8,16 +8,13 @@ namespace Domain.Models
     {
         private readonly string _fileName;
         private readonly double _size;
-        private readonly dynamic _data;
         private readonly DateTime _dateOfCreation;
         private readonly string _extension = ".avi";
         private readonly string _path;
 
-        public ScreenvideoFile(string fileName, double size, dynamic data, DateTime dateOfCreation, string path)
+        public ScreenvideoFile(string fileName, DateTime dateOfCreation, string path)
         {
             _fileName = fileName;
-            _size = size;
-            _data = data;
             _dateOfCreation = dateOfCreation;
             _path = path;
         }
@@ -25,8 +22,6 @@ namespace Domain.Models
         public string FileName => _fileName;
 
         public double Size => _size;
-
-        public dynamic Data => _data;
 
         public DateTime DateOfCreation => _dateOfCreation;
 
@@ -47,7 +42,6 @@ namespace Domain.Models
 
                 hash = hash * 24 + _fileName.GetHashCode();
                 hash = hash * 24 + _size.GetHashCode();
-                hash = hash * 24 + _data.GetHashCode();
                 hash = hash * 24 + _dateOfCreation.GetHashCode();
                 hash = hash * 24 + _extension.GetHashCode();
                 hash = hash * 24 + _path.GetHashCode();
@@ -69,7 +63,7 @@ namespace Domain.Models
 
             var x = obj as ScreenvideoFile;
 
-            if (_size != x._size || _dateOfCreation != x.DateOfCreation || _data != x._data || _fileName != x._fileName || _extension != x._extension || _path != x._path)
+            if (_size != x._size || _dateOfCreation != x.DateOfCreation || _fileName != x._fileName || _extension != x._extension || _path != x._path)
                 return false;
 
             return true;

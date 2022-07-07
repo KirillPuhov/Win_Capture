@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace Domain.Models
 {
@@ -7,8 +8,6 @@ namespace Domain.Models
         string FileName { get; }
 
         double Size { get; }
-
-        dynamic Data { get; }
 
         DateTime DateOfCreation { get; }
 

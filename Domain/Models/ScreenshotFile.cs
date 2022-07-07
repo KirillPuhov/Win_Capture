@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Windows.Forms;
 
 namespace Domain.Models
 {
     public sealed class ScreenshotFile : IOutFile
     {
         private readonly string _fileName;
-        private readonly double _size;
-        private readonly dynamic _data;
         private readonly DateTime _dateOfCreation;
         private readonly string _extension = ".png";
         private readonly string _path;
 
-        public ScreenshotFile(string fileName, double size, dynamic data, DateTime dateOfCreation, string path)
+        private double _size;
+
+        public ScreenshotFile(string fileName, DateTime dateOfCreation, string path)
         {
             _fileName = fileName;
-            _size = size;
-            _data = data;
             _dateOfCreation = dateOfCreation;
             _path = path;
         }
@@ -25,8 +24,6 @@ namespace Domain.Models
         public string FileName => _fileName;
 
         public double Size => _size;
-
-        public dynamic Data => _data;
 
         public DateTime DateOfCreation => _dateOfCreation;
 
@@ -36,8 +33,21 @@ namespace Domain.Models
 
         public void Save()
         {
-            var _bitmap = (Bitmap)Data;
-            _bitmap.Save(Path, ImageFormat.Png);
+            // получаем размеры окна рабочего стола
+            Rectangle _bounds = Screen.GetBounds(Point.Empty);
+
+            // создаем пустое изображения размером с экран устройства
+            using (var _bitmap = new Bitmap(_bounds.Width, _bounds.Height))
+            {
+                // создаем объект на котором можно рисовать
+                using (var _graphic = Graphics.FromImage(_bitmap))
+                {
+                    // перерисовываем экран на наш графический объект
+                    _graphic.CopyFromScreen(Point.Empty, Point.Empty, _bounds.Size);
+                }
+                _size = _bitmap.Size.Width * _bitmap.Size.Height;
+                _bitmap.Save(Path + "\\" + FileName + $"{this.GetHashCode()}" + Extension, ImageFormat.Png);
+            }
         }
 
         public override int GetHashCode()
@@ -48,7 +58,6 @@ namespace Domain.Models
 
                 hash = hash * 23 + _fileName.GetHashCode();
                 hash = hash * 23 + _size.GetHashCode();
-                hash = hash * 23 + _data.GetHashCode();
                 hash = hash * 23 + _dateOfCreation.GetHashCode();
                 hash = hash * 24 + _extension.GetHashCode();
                 hash = hash * 23 + _path.GetHashCode();
@@ -70,7 +79,7 @@ namespace Domain.Models
 
             var x = obj as ScreenshotFile;
 
-            if (_size != x._size || _dateOfCreation != x.DateOfCreation || _data != x._data || _fileName != x._fileName || _extension != x._extension || _path != x._path)
+            if (_size != x._size || _dateOfCreation != x.DateOfCreation || _fileName != x._fileName || _extension != x._extension || _path != x._path)
                 return false;
 
             return true;

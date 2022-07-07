@@ -25,15 +25,15 @@ namespace AppUi.Window.ViewModel
 
         #endregion
 
-        private RelayCommand _open;
-        public RelayCommand Open
+        private RelayCommand _screenshot;
+        public RelayCommand Screenshot
         {
-            get 
+            get
             {
-                return _open ??
-                    (_open = new RelayCommand(obj => 
+                return _screenshot ??
+                    (_screenshot = new RelayCommand(obj => 
                     {
-                        _dialogService.ShowInfo("Not working yet");
+                        _captureService.Start(CaptureType.Screenshot, "screenshot", @"C:\Users\micro\Desktop");
                     }));
             }
         }
