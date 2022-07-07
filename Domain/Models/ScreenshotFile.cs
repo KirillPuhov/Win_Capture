@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace Domain.Models
 {
@@ -8,7 +10,7 @@ namespace Domain.Models
         private readonly double _size;
         private readonly dynamic _data;
         private readonly DateTime _dateOfCreation;
-        private readonly string _extension = ".jpg";
+        private readonly string _extension = ".png";
         private readonly string _path;
 
         public ScreenshotFile(string fileName, double size, dynamic data, DateTime dateOfCreation, string path)
@@ -31,6 +33,12 @@ namespace Domain.Models
         public string Extension => _extension;
 
         public string Path => _path;
+
+        public void Save()
+        {
+            var _bitmap = (Bitmap)Data;
+            _bitmap.Save(Path, ImageFormat.Png);
+        }
 
         public override int GetHashCode()
         {

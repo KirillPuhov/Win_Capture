@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace Domain.Models
 {
@@ -31,6 +33,11 @@ namespace Domain.Models
         public string Extension => _extension;
 
         public string Path => _path;
+
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
 
         public override int GetHashCode()
         {

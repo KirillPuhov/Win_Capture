@@ -15,5 +15,7 @@ namespace Domain.Models
         string Extension { get; }
 
         string Path { get; }
+
+        void Save();
     }
 }

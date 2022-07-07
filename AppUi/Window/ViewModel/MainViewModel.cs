@@ -11,6 +11,7 @@ namespace AppUi.Window.ViewModel
         private readonly IDiContainer _container;
 
         private readonly IDialogService _dialogService;
+        private readonly ICaptureService _captureService;
 
         #region ctor
 
@@ -18,7 +19,8 @@ namespace AppUi.Window.ViewModel
         {
             _container = container;
 
-            _dialogService = _container.Navigate<IDialogService>("DialogService");
+            _dialogService  = _container.Navigate<IDialogService>("DialogService");
+            _captureService = _container.Navigate<ICaptureService>("CaptureService");
         }
 
         #endregion
