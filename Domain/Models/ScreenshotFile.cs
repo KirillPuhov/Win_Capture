@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Domain.Models
@@ -31,7 +32,7 @@ namespace Domain.Models
 
         public string Path => _path;
 
-        public void Save()
+        public void doAction()
         {
             // создаем пустое изображения размером с экран устройства
             using (var _bitmap = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height))
@@ -43,9 +44,18 @@ namespace Domain.Models
                     _graphic.CopyFromScreen(Point.Empty, Point.Empty, _bitmap.Size);
                 }
                 _size = _bitmap.Size.Width * _bitmap.Size.Height;
-                _bitmap.Save(Path + "\\" + FileName + $"{this.GetHashCode()}" + Extension, ImageFormat.Png);
+                DirExist();
+                _bitmap.Save(Path + "\\Win_Capture\\Screenshots\\" + FileName + $"{this.GetHashCode()}" + Extension, ImageFormat.Png);
             }
         }
+
+        private void DirExist()
+        {
+            if (!Directory.Exists(Path + "\\Win_Capture\\Screenshots"))
+                Directory.CreateDirectory(Path + "\\Win_Capture\\Screenshots");
+        }
+
+        public void stopAction() { }
 
         public override int GetHashCode()
         {

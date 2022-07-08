@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Drawing;
-using System.Drawing.Imaging;
 
 namespace Domain.Models
 {
@@ -29,9 +27,14 @@ namespace Domain.Models
 
         public string Path => _path;
 
-        public void Save()
+        public void doAction()
         {
             throw new NotImplementedException();
+        }
+
+        public void stopAction()
+        {
+
         }
 
         public override int GetHashCode()

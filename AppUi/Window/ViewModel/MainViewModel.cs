@@ -3,7 +3,6 @@ using AppUi.Window.Command;
 using AppUi.Window.DI;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Timers;
 using System.Windows;
 
 namespace AppUi.Window.ViewModel
@@ -37,7 +36,7 @@ namespace AppUi.Window.ViewModel
                 return _screenshot ??
                     (_screenshot = new RelayCommand(obj => 
                     {
-                        _captureService.Start(CaptureType.Screenshot, "screenshot", @"C:\Users\micro\Desktop");
+                        _captureService.Start(CaptureType.Screenshot, "screenshot", @"C:\Users\micro\Documents");
                     }));
             }
         }

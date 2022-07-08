@@ -66,8 +66,10 @@
     </Compile>
     <Compile Include="Services\CaptureService.cs" />
     <Compile Include="Services\DialogService.cs" />
+    <Compile Include="Services\HelperService.cs" />
     <Compile Include="Services\ICaptureService.cs" />
     <Compile Include="Services\IDialogService.cs" />
+    <Compile Include="Services\IHelper.cs" />
     <Compile Include="Window\Command\RelayCommand.cs" />
     <Compile Include="Window\DI\Container.cs" />
     <Compile Include="Window\DI\IDiContainer.cs" />

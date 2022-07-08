@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 
 namespace Domain.Models
 {
@@ -15,6 +14,8 @@ namespace Domain.Models
 
         string Path { get; }
 
-        void Save();
+        void doAction();
+
+        void stopAction();
     }
 }
