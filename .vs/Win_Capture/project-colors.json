@@ -20,7 +20,17 @@
       "ProjectGuid": "95c60f52-9126-4d3c-85b9-c5960ec1a731",
       "DisplayName": "AppUi",
       "ColorIndex": 3
+    },
+    "c489edf8-a75d-4b96-b06e-98445b384309": {
+      "ProjectGuid": "c489edf8-a75d-4b96-b06e-98445b384309",
+      "DisplayName": "Setting",
+      "ColorIndex": 4
+    },
+    "4c99978a-7597-40b3-8ba2-40c06b10f7f5": {
+      "ProjectGuid": "4c99978a-7597-40b3-8ba2-40c06b10f7f5",
+      "DisplayName": "Settings",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 6
 }

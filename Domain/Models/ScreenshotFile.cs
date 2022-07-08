@@ -33,17 +33,14 @@ namespace Domain.Models
 
         public void Save()
         {
-            // получаем размеры окна рабочего стола
-            Rectangle _bounds = Screen.GetBounds(Point.Empty);
-
             // создаем пустое изображения размером с экран устройства
-            using (var _bitmap = new Bitmap(_bounds.Width, _bounds.Height))
+            using (var _bitmap = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height))
             {
                 // создаем объект на котором можно рисовать
                 using (var _graphic = Graphics.FromImage(_bitmap))
                 {
                     // перерисовываем экран на наш графический объект
-                    _graphic.CopyFromScreen(Point.Empty, Point.Empty, _bounds.Size);
+                    _graphic.CopyFromScreen(Point.Empty, Point.Empty, _bitmap.Size);
                 }
                 _size = _bitmap.Size.Width * _bitmap.Size.Height;
                 _bitmap.Save(Path + "\\" + FileName + $"{this.GetHashCode()}" + Extension, ImageFormat.Png);

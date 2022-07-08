@@ -137,6 +137,10 @@
       <Project>{be80693c-44da-469b-b100-c8b72b7ae5fd}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Settings\Settings.csproj">
+      <Project>{4c99978a-7597-40b3-8ba2-40c06b10f7f5}</Project>
+      <Name>Settings</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

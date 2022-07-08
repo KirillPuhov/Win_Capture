@@ -27,3 +27,5 @@ D:\GitHub\Win_Capture\AppUi\obj\Debug\App.baml
 D:\GitHub\Win_Capture\AppUi\obj\Debug\Window\Window.baml
 D:\GitHub\Win_Capture\AppUi\obj\Debug\Controls\Window\TextDialog.g.cs
 D:\GitHub\Win_Capture\AppUi\obj\Debug\Controls\Window\TextDialog.baml
+D:\GitHub\Win_Capture\AppUi\bin\Debug\Settings.dll
+D:\GitHub\Win_Capture\AppUi\bin\Debug\Settings.pdb

@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:AppUi"
         mc:Ignorable="d"
         xmlns:window="clr-namespace:AppUi.Window"
-        Title="RayeUI" Width="420" Height="550" WindowStartupLocation="CenterScreen" IsHeaderTextVisible="False" WindowState="Normal">
+        Title="RayeUI" Width="420" Height="150" WindowStartupLocation="CenterScreen" IsHeaderTextVisible="False" WindowState="Normal">
     <window:RayeWindow.HeaderContent>
 
         <Grid HorizontalAlignment="Left">

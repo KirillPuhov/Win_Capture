@@ -3,15 +3,19 @@ using AppUi.Window.Command;
 using AppUi.Window.DI;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Timers;
+using System.Windows;
 
 namespace AppUi.Window.ViewModel
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public sealed class MainViewModel : INotifyPropertyChanged
     {
         private readonly IDiContainer _container;
 
         private readonly IDialogService _dialogService;
         private readonly ICaptureService _captureService;
+
+        private System.Windows.Window window = Application.Current.MainWindow;
 
         #region ctor
 

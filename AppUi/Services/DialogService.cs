@@ -4,7 +4,7 @@ using System.Windows;
 
 namespace AppUi.Services
 {
-    public class DialogService : IDialogService
+    public sealed class DialogService : IDialogService
     {
         private readonly System.Windows.Window _ownerWindow;
 
