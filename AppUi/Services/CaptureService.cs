@@ -14,14 +14,28 @@ namespace AppUi.Services
 
         public void Start(CaptureType type, string fileName, string path)
         {
+            _output = GetFactory(type, fileName, path).GetOutFile();
+            _output.doAction();
+        }
+
+        public void TaskStart(CaptureType type, string fileName, string path)
+        {
             _helper.WindowHide();
 
             _output = GetFactory(type, fileName, path).GetOutFile();
 
-            //задержка перед сохранением скриншота
             _helper.PauseBeforeAction(() => { _output.doAction(); });
-
             _helper.WindowShow();
+        }
+
+        public void Stop(IOutFile file)
+        {
+            file.stopAction();
+        }
+
+        public IOutFile GetOutFile()
+        {
+            return _output;
         }
 
         private OutFileFactory GetFactory(CaptureType outputType, string fileName, string path)

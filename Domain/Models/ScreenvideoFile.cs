@@ -1,4 +1,12 @@
-﻿using System;
+﻿using Domain.Services;
+using NAudio.Wave;
+using SharpAvi;
+using SharpAvi.Codecs;
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Windows.Threading;
 
 namespace Domain.Models
 {
@@ -10,11 +18,20 @@ namespace Domain.Models
         private readonly string _extension = ".avi";
         private readonly string _path;
 
+        private readonly DispatcherTimer _recordingTimer;
+        private readonly Stopwatch _recordingStopwatch = new Stopwatch();
+        private RecorderService _recorder;
+        private string _lastFileName;
+
         public ScreenvideoFile(string fileName, DateTime dateOfCreation, string path)
         {
             _fileName = fileName;
             _dateOfCreation = dateOfCreation;
             _path = path;
+
+            _recordingTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
+
+            InitDefaultSettings();
         }
 
         public string FileName => _fileName;
@@ -29,12 +46,72 @@ namespace Domain.Models
 
         public void doAction()
         {
-            throw new NotImplementedException();
+            if (_isRecording)
+                throw new InvalidOperationException("Запись уже идёт!");
+
+            _isRecording = true;
+
+            _recordingStopwatch.Reset();
+            _recordingTimer.Start();
+
+            _lastFileName = System.IO.Path.Combine(Path + "\\Win_Capture\\Video", FileName + $"{this.GetHashCode()}" + Extension);
+            var _bitRate = Mp3LameAudioEncoder.SupportedBitRates.OrderBy(br => br).ElementAt(_audioQuality);
+            _recorder = new RecorderService(_lastFileName,
+                _encoder, _encodingQuality,
+                _audioSourceIndex, _audioWaveFormat, _encodeAudio, _bitRate);
+
+            _recordingStopwatch.Start();
         }
 
         public void stopAction()
         {
+            if (!_isRecording)
+                throw new InvalidOperationException("Запись не идёт!");
 
+            try
+            {
+                _recorder?.Dispose();
+                _recorder = null;
+            }
+            finally
+            {
+                _recordingTimer.Stop();
+                _recordingStopwatch.Stop();
+
+                _isRecording = false;
+            }
+
+        }
+
+        
+        private int _encodingQuality;
+        private int _audioSourceIndex;
+        private int _audioQuality;
+        private bool _encodeAudio;
+        private bool _isRecording;
+        private FourCC _encoder;
+        private SupportedWaveFormat _audioWaveFormat;
+        
+
+        private void InitDefaultSettings()
+        {
+            DirExist();
+
+            _encoder = CodecIds.MotionJpeg;
+            _encodingQuality = 70;
+
+            _audioSourceIndex = -1;
+            _audioWaveFormat = SupportedWaveFormat.WAVE_FORMAT_44M16;
+            _encodeAudio = true;
+            _audioQuality = (Mp3LameAudioEncoder.SupportedBitRates.Length + 1) / 2;
+
+            _isRecording = false;
+        }
+
+        private void DirExist()
+        {
+            if (!Directory.Exists(Path + "\\Win_Capture\\Video"))
+                Directory.CreateDirectory(Path + "\\Win_Capture\\Video");
         }
 
         public override int GetHashCode()
