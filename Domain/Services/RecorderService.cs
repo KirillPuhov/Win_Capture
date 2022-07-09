@@ -14,6 +14,7 @@ using System.Windows.Interop;
 
 namespace Domain.Services
 {
+    //Код взят с https://github.com/baSSiLL/SharpAvi
     public class RecorderService : IDisposable
     {
         public static readonly FourCC MJPEG_IMAGE_SHARP = "IMG#";
@@ -100,13 +101,6 @@ namespace Domain.Services
             else if (codec == CodecIds.MotionJpeg)
             {
                 // Use M-JPEG based on WPF (Windows only)
-                return writer.AddMJpegWpfVideoStream(screenWidth, screenHeight, quality);
-            }
-            else if (codec == MJPEG_IMAGE_SHARP)
-            {
-                // Use M-JPEG based on the SixLabors.ImageSharp package (cross-platform)
-                // Included in the SharpAvi.ImageSharp package
-                //return writer.AddMJpegImageSharpVideoStream(screenWidth, screenHeight, quality);
                 return writer.AddMJpegWpfVideoStream(screenWidth, screenHeight, quality);
             }
             else

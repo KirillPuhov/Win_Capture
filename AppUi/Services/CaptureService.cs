@@ -18,7 +18,7 @@ namespace AppUi.Services
             _output.doAction();
         }
 
-        public void TaskStart(CaptureType type, string fileName, string path)
+        public void HideWindowAndStart(CaptureType type, string fileName, string path)
         {
             _helper.WindowHide();
 
@@ -28,9 +28,9 @@ namespace AppUi.Services
             _helper.WindowShow();
         }
 
-        public void Stop(IOutFile file)
+        public void Stop()
         {
-            file.stopAction();
+            _output.stopAction();
         }
 
         public IOutFile GetOutFile()

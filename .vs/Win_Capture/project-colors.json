@@ -30,7 +30,12 @@
       "ProjectGuid": "4c99978a-7597-40b3-8ba2-40c06b10f7f5",
       "DisplayName": "Settings",
       "ColorIndex": 5
+    },
+    "e399a9ad-0f94-4969-b241-673cdb830fbe": {
+      "ProjectGuid": "e399a9ad-0f94-4969-b241-673cdb830fbe",
+      "DisplayName": "SharpAvi.ImageSharp",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 7
 }

@@ -1,7 +1,6 @@
 ﻿using AppUi.Services;
 using AppUi.Window.Command;
 using AppUi.Window.DI;
-using Domain.Models;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -37,12 +36,11 @@ namespace AppUi.Window.ViewModel
                 return _screenshot ??
                     (_screenshot = new RelayCommand(obj => 
                     {
-                        _captureService.Start(CaptureType.Screenshot, "screenshot", @"C:\Users\micro\Documents");
+                        _captureService.HideWindowAndStart(CaptureType.Screenshot, "screenshot", @"C:\Users\micro\Documents");
                     }));
             }
         }
 
-        private IOutFile _file;
         private RelayCommand _startRecord;
         public RelayCommand StartRecord
         {
@@ -52,7 +50,6 @@ namespace AppUi.Window.ViewModel
                     (_startRecord = new RelayCommand(obj => 
                     {
                         _captureService.Start(CaptureType.Screenvideo, "video", @"C:\Users\micro\Documents");
-                        _file = _captureService.GetOutFile();
                     }));
             }
         }
@@ -65,7 +62,7 @@ namespace AppUi.Window.ViewModel
                 return _stopRecord ??
                     (_stopRecord = new RelayCommand(obj => 
                     {
-                        _captureService.Stop(_file);
+                        _captureService.Stop();
                     }));
             }
         }

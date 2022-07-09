@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SharpAvi.ImageSharp</name>
+    </assembly>
+    <members>
+        <member name="T:SharpAvi.Codecs.ImageSharpEncoderStreamFactory">
+            <summary>
+            Contains extension methods for creating video streams.
+            </summary>
+        </member>
+        <member name="M:SharpAvi.Codecs.ImageSharpEncoderStreamFactory.AddMJpegImageSharpVideoStream(SharpAvi.Output.AviWriter,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adds new video stream with <see cref="T:SharpAvi.Codecs.MJpegImageSharpVideoEncoder"/>.
+            </summary>
+            <param name="writer">Writer object to which new stream is added.</param>
+            <param name="width">Frame width.</param>
+            <param name="height">Frame height.</param>
+            <param name="quality">Requested quality of compression.</param>
+            <seealso cref="M:SharpAvi.Output.AviWriter.AddEncodingVideoStream(SharpAvi.Codecs.IVideoEncoder,System.Boolean,System.Int32,System.Int32)"/>
+            <seealso cref="T:SharpAvi.Codecs.MJpegImageSharpVideoEncoder"/>
+        </member>
+        <member name="T:SharpAvi.Codecs.MJpegImageSharpVideoEncoder">
+            <summary>
+            Encodes frames in Motion JPEG format.
+            </summary>
+            <remarks>
+            The implementation relies on <see cref="T:SixLabors.ImageSharp.Formats.Jpeg.JpegEncoder"/> from the <c>SixLabors.ImageSharp</c> package.
+            </remarks>
+        </member>
+        <member name="M:SharpAvi.Codecs.MJpegImageSharpVideoEncoder.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new instance of <see cref="T:SharpAvi.Codecs.MJpegImageSharpVideoEncoder"/>.
+            </summary>
+            <param name="width">Frame width.</param>
+            <param name="height">Frame height.</param>
+            <param name="quality">
+            Compression quality in the range [1..100].
+            Less values mean less size and lower image quality.
+            </param>
+        </member>
+        <member name="P:SharpAvi.Codecs.MJpegImageSharpVideoEncoder.Codec">
+            <summary>Video codec.</summary>
+        </member>
+        <member name="P:SharpAvi.Codecs.MJpegImageSharpVideoEncoder.BitsPerPixel">
+            <summary>
+            Number of bits per pixel in encoded image.
+            </summary>
+        </member>
+        <member name="P:SharpAvi.Codecs.MJpegImageSharpVideoEncoder.MaxEncodedSize">
+            <summary>
+            Maximum size of encoded frmae.
+            </summary>
+        </member>
+        <member name="M:SharpAvi.Codecs.MJpegImageSharpVideoEncoder.EncodeFrame(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Boolean@)">
+            <summary>
+            Encodes a frame.
+            </summary>
+        </member>
+        <member name="T:SharpAvi.Utilities.Argument">
+            <summary>
+            An utility class for argument checks.
+            </summary>
+            <remarks>
+            The methods are not extensions to make argument checks look more explicit
+            (at the expense of a bit more verbosity).
+            </remarks>
+        </member>
+    </members>
+</doc>

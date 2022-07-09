@@ -34,3 +34,6 @@ D:\GitHub\Win_Capture\Domain\bin\Debug\System.Security.AccessControl.xml
 D:\GitHub\Win_Capture\Domain\bin\Debug\System.Security.Principal.Windows.xml
 D:\GitHub\Win_Capture\Domain\bin\Debug\System.Text.Encoding.CodePages.xml
 D:\GitHub\Win_Capture\Domain\obj\Debug\Domain.csproj.CopyComplete
+D:\GitHub\Win_Capture\Domain\bin\Debug\SharpAvi.ImageSharp.dll
+D:\GitHub\Win_Capture\Domain\bin\Debug\SharpAvi.ImageSharp.pdb
+D:\GitHub\Win_Capture\Domain\bin\Debug\SharpAvi.ImageSharp.xml
