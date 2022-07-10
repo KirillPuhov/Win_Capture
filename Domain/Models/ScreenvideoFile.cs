@@ -13,10 +13,11 @@ namespace Domain.Models
     public sealed class ScreenvideoFile : IOutFile
     {
         private readonly string _fileName;
-        private readonly double _size;
         private readonly DateTime _dateOfCreation;
         private readonly string _extension = ".avi";
         private readonly string _path;
+
+        private double _size;
 
         private readonly DispatcherTimer _recordingTimer;
         private readonly Stopwatch _recordingStopwatch = new Stopwatch();
@@ -58,7 +59,8 @@ namespace Domain.Models
             var _bitRate = Mp3LameAudioEncoder.SupportedBitRates.OrderBy(br => br).ElementAt(_audioQuality);
             _recorder = new RecorderService(_lastFileName,
                 _encoder, _encodingQuality,
-                _audioSourceIndex, _audioWaveFormat, _encodeAudio, _bitRate);
+                _audioSourceIndex, _audioWaveFormat, _encodeAudio, _bitRate, _framesPerSecond);
+            _size = _recorder.ScreenWidth * _recorder.ScreenHeight;
 
             _recordingStopwatch.Start();
         }
@@ -78,14 +80,18 @@ namespace Domain.Models
                 _recordingTimer.Stop();
                 _recordingStopwatch.Stop();
 
+                _size = _recordingStopwatch.ElapsedMilliseconds * 
+                        _encodingQuality;
+
                 _isRecording = false;
             }
 
         }
 
         
-        private int _encodingQuality;
         private int _audioSourceIndex;
+        private int _encodingQuality;
+        private int _framesPerSecond;
         private int _audioQuality;
         private bool _encodeAudio;
         private bool _isRecording;
@@ -99,6 +105,7 @@ namespace Domain.Models
 
             _encoder = CodecIds.MotionJpeg;
             _encodingQuality = 70;
+            _framesPerSecond = 30;
 
             _audioSourceIndex = -1;
             _audioWaveFormat = SupportedWaveFormat.WAVE_FORMAT_44M16;

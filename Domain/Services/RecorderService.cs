@@ -17,8 +17,6 @@ namespace Domain.Services
     //Код взят с https://github.com/baSSiLL/SharpAvi
     public class RecorderService : IDisposable
     {
-        public static readonly FourCC MJPEG_IMAGE_SHARP = "IMG#";
-
         private readonly int screenWidth;
         private readonly int screenHeight;
         private readonly AviWriter writer;
@@ -30,9 +28,19 @@ namespace Domain.Services
         private readonly AutoResetEvent videoFrameWritten = new AutoResetEvent(false);
         private readonly AutoResetEvent audioBlockWritten = new AutoResetEvent(false);
 
+        public int ScreenWidth
+        {
+            get { return screenWidth; }
+        }
+
+        public int ScreenHeight
+        {
+            get { return screenHeight; }
+        }
+
         public RecorderService(string fileName,
             FourCC codec, int quality,
-            int audioSourceIndex, SupportedWaveFormat audioWaveFormat, bool encodeAudio, int audioBitRate)
+            int audioSourceIndex, SupportedWaveFormat audioWaveFormat, bool encodeAudio, int audioBitRate, int framesPerSecond)
         {
             System.Windows.Media.Matrix toDevice;
             using (var source = new HwndSource(new HwndSourceParameters()))
@@ -46,7 +54,7 @@ namespace Domain.Services
             // Create AVI writer and specify FPS
             writer = new AviWriter(fileName)
             {
-                FramesPerSecond = 10,
+                FramesPerSecond = framesPerSecond,
                 EmitIndex1 = true,
             };
 
@@ -105,14 +113,7 @@ namespace Domain.Services
             }
             else
             {
-                return writer.AddMpeg4VcmVideoStream(screenWidth, screenHeight, (double)writer.FramesPerSecond,
-                    // It seems that all tested MPEG-4 VfW codecs ignore the quality affecting parameters passed through VfW API
-                    // They only respect the settings from their own configuration dialogs, and Mpeg4VideoEncoder currently has no support for this
-                    quality: quality,
-                    codec: codec,
-                    // Most of VfW codecs expect single-threaded use, so we wrap this encoder to special wrapper
-                    // Thus all calls to the encoder (including its instantiation) will be invoked on a single thread although encoding (and writing) is performed asynchronously
-                    forceSingleThreadedAccess: true);
+                return writer.AddUncompressedVideoStream(screenWidth, screenHeight);
             }
         }
 

@@ -36,14 +36,3 @@ D:\GitHub\Win_Capture\AppUi\bin\Debug\Microsoft.Win32.Registry.dll
 D:\GitHub\Win_Capture\AppUi\bin\Debug\Domain.dll.config
 D:\GitHub\Win_Capture\AppUi\bin\Debug\SharpAvi.xml
 D:\GitHub\Win_Capture\AppUi\bin\Debug\Microsoft.Win32.Registry.xml
-D:\GitHub\Win_Capture\AppUi\bin\Debug\SharpAvi.ImageSharp.dll
-D:\GitHub\Win_Capture\AppUi\bin\Debug\System.Memory.dll
-D:\GitHub\Win_Capture\AppUi\bin\Debug\System.Numerics.Vectors.dll
-D:\GitHub\Win_Capture\AppUi\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\GitHub\Win_Capture\AppUi\bin\Debug\System.Buffers.dll
-D:\GitHub\Win_Capture\AppUi\bin\Debug\SharpAvi.ImageSharp.pdb
-D:\GitHub\Win_Capture\AppUi\bin\Debug\SharpAvi.ImageSharp.xml
-D:\GitHub\Win_Capture\AppUi\bin\Debug\System.Memory.xml
-D:\GitHub\Win_Capture\AppUi\bin\Debug\System.Numerics.Vectors.xml
-D:\GitHub\Win_Capture\AppUi\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\GitHub\Win_Capture\AppUi\bin\Debug\System.Buffers.xml
