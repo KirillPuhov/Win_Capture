@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -16,7 +17,6 @@ namespace Settings.init
 
         public IniFile(string iniPath) =>
             _path = new FileInfo(iniPath).FullName.ToString();
-
 
         public string ReadINI(string section, string key)
         {
@@ -45,5 +45,13 @@ namespace Settings.init
             return ReadINI(section, key).Length > 0;
         }
 
+
+        private static readonly Lazy<IniFile> _lazy =
+            new Lazy<IniFile>(() => new IniFile(Environment.CurrentDirectory + "\\settings.ini"));
+
+        public static IniFile GetInstance()
+        {
+            return _lazy.Value;
+        }
     }
 }

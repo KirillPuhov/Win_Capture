@@ -1,22 +1,47 @@
 ﻿using ScreenRecorderLib;
+using Settings.init;
+using System;
 
 namespace Settings
 {
     public sealed class RecorderSettings
     {
+        private readonly IniFile _init = IniFile.GetInstance();
+
         private RecorderOptions _options;
 
-        private AudioBitrate  _bitrate;
-        private AudioChannels _channels;
-        private bool          _isAudioEnabled;
-        private int           _fps;
+        private readonly AudioBitrate  _bitrate;
+        private readonly AudioChannels _channels;
+        private readonly bool          _isAudioEnabled;
+        private readonly int           _fps;
 
-        public RecorderSettings(AudioBitrate bitrate, AudioChannels channels, bool isAudioEnabled, int fps)
+        private readonly bool _isMouseClicksDetected;
+        private readonly bool _isMousePointerEnabled;
+        private readonly string _mouseLeftClickDetectionColor;
+        private readonly string _mouseRightClickDetectionColor;
+
+        public RecorderSettings()
         {
-            _bitrate        = bitrate;
-            _channels       = channels;
+            Enum.TryParse(_init.ReadINI("Recorder", "Bitrate"), out AudioBitrate bitrate);
+            _bitrate = bitrate;
+
+            Enum.TryParse(_init.ReadINI("Recorder", "Channels"), out AudioChannels channels);
+            _channels = channels;
+
+            bool.TryParse(_init.ReadINI("Recorder", "IsAudioEnabled"), out bool isAudioEnabled);
             _isAudioEnabled = isAudioEnabled;
-            _fps            = fps;
+
+            int.TryParse(_init.ReadINI("Recorder", "Fps"), out int fps);
+            _fps = fps;
+
+            bool.TryParse(_init.ReadINI("Recorder", "IsMouseClicksDetected"), out bool isMouseClicksDetected);
+            _isMouseClicksDetected = isMouseClicksDetected;
+
+            bool.TryParse(_init.ReadINI("Recorder", "IsMousePointerEnabled"), out bool isMousePointerEnabled);
+            _isMousePointerEnabled = isMousePointerEnabled;
+
+            _mouseLeftClickDetectionColor = _init.ReadINI("Recorder", "MouseLeftClickDetectionColor");
+            _mouseRightClickDetectionColor = _init.ReadINI("Recorder", "MouseRightClickDetectionColor");
         }
 
         public AudioBitrate Bitrate  => _bitrate;
@@ -57,15 +82,13 @@ namespace Settings
                 },
                 MouseOptions = new MouseOptions
                 {
-                    //Displays a colored dot under the mouse cursor when the left mouse button is pressed.	
-                    IsMouseClicksDetected         = true,
-                    MouseLeftClickDetectionColor  = "#FFFF00",
-                    MouseRightClickDetectionColor = "#FFFF00",
+                    IsMouseClicksDetected         = _isMouseClicksDetected,
+                    MouseLeftClickDetectionColor  = _mouseLeftClickDetectionColor,
+                    MouseRightClickDetectionColor = _mouseRightClickDetectionColor,
                     MouseClickDetectionRadius     = 30,
                     MouseClickDetectionDuration   = 100,
-                    IsMousePointerEnabled         = true,
-                    /* Polling checks every millisecond if a mouse button is pressed.
-                       Hook is more accurate, but may affect mouse performance as every mouse update must be processed.*/
+                    IsMousePointerEnabled         = _isMousePointerEnabled,
+
                     MouseClickDetectionMode = MouseDetectionMode.Hook
                 },
             };

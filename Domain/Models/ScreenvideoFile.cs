@@ -51,7 +51,7 @@ namespace Domain.Models
             DirExist();
 
             string _videoPath = System.IO.Path.Combine(Path + "\\Win_Capture\\Video", FileName + $"{this.GetHashCode()}" + Extension);
-            var _settings     = new RecorderSettings(bitrate: AudioBitrate.bitrate_128kbps, channels: AudioChannels.Stereo, isAudioEnabled: true, fps: 60);
+            var _settings     = new RecorderSettings();
 
             _recorderLogger   = new RecorderLogger(new RecorderService(_settings, _videoPath));
         }
