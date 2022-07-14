@@ -7,7 +7,7 @@ namespace Domain.Services
     public sealed class RecorderLogger : IRecorderService
     {
         private const string FILE_NAME = "recorder.log";
-        private string  FILEPATH = System.IO.Path.Combine(Environment.CurrentDirectory, FILE_NAME);
+        private string       FILEPATH  = System.IO.Path.Combine(Environment.CurrentDirectory, FILE_NAME);
 
         private readonly IRecorderService _recorderService;
 

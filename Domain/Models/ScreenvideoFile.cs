@@ -1,5 +1,6 @@
 ﻿using Domain.Services;
 using ScreenRecorderLib;
+using Settings;
 using System;
 using System.IO;
 
@@ -12,29 +13,28 @@ namespace Domain.Models
         private readonly string _extension = ".mp4";
 
         private string _path;
-
         private double _size = 1920*1080;
 
         private RecorderLogger _recorderLogger;
 
         public ScreenvideoFile(string fileName, DateTime dateOfCreation, string path)
         {
-            _fileName = fileName;
+            _fileName       = fileName;
             _dateOfCreation = dateOfCreation;
-            _path = path;
+            _path           = path;
 
             InitDefaultSettings();
         }
 
-        public string FileName => _fileName;
+        public string FileName         => _fileName;
 
-        public double Size => _size;
+        public double Size             => _size;
 
         public DateTime DateOfCreation => _dateOfCreation;
 
-        public string Extension => _extension;
+        public string Extension        => _extension;
 
-        public string Path => _path;
+        public string Path             => _path;
 
         public void doAction()
         {
@@ -51,9 +51,9 @@ namespace Domain.Models
             DirExist();
 
             string _videoPath = System.IO.Path.Combine(Path + "\\Win_Capture\\Video", FileName + $"{this.GetHashCode()}" + Extension);
-            var _settings = new RecorderSettings(bitrate: AudioBitrate.bitrate_128kbps, channels: AudioChannels.Stereo, isAudioEnabled: true, fps: 60);
+            var _settings     = new RecorderSettings(bitrate: AudioBitrate.bitrate_128kbps, channels: AudioChannels.Stereo, isAudioEnabled: true, fps: 60);
 
-            _recorderLogger = new RecorderLogger(new RecorderService(_settings, _videoPath));
+            _recorderLogger   = new RecorderLogger(new RecorderService(_settings, _videoPath));
         }
 
         private void DirExist()

@@ -1,4 +1,5 @@
 ﻿using ScreenRecorderLib;
+using Settings;
 
 namespace Domain.Services
 {
@@ -82,60 +83,6 @@ namespace Domain.Services
         private void Rec_OnStatusChanged(object sender, RecordingStatusEventArgs e)
         {
             Status = e.Status;
-        }
-    }
-
-    public sealed class RecorderSettings 
-    {
-        private readonly RecorderOptions _options;
-
-        public RecorderSettings(AudioBitrate bitrate, AudioChannels channels, bool isAudioEnabled, int fps)
-        {
-             _options = new RecorderOptions
-             {
-                 AudioOptions = new AudioOptions
-                 {
-                     Bitrate = bitrate,
-                     Channels = channels,
-                     IsAudioEnabled = isAudioEnabled,
-                 },
-                 VideoEncoderOptions = new VideoEncoderOptions
-                 {
-                     Bitrate = 8000 * 1000,
-                     Framerate = fps,
-                     IsFixedFramerate = true,
-
-                     Encoder = new H264VideoEncoder
-                     {
-                         BitrateMode = H264BitrateControlMode.CBR,
-                         EncoderProfile = H264Profile.Main,
-                     },
-
-                     IsFragmentedMp4Enabled = true,
-                     IsThrottlingDisabled = false,
-                     IsHardwareEncodingEnabled = true,
-                     IsLowLatencyEnabled = false,
-                     IsMp4FastStartEnabled = false
-                 },
-                 MouseOptions = new MouseOptions
-                 {
-                     //Displays a colored dot under the mouse cursor when the left mouse button is pressed.	
-                     IsMouseClicksDetected = true,
-                     MouseLeftClickDetectionColor = "#FFFF00",
-                     MouseRightClickDetectionColor = "#FFFF00",
-                     MouseClickDetectionRadius = 30,
-                     MouseClickDetectionDuration = 100,
-                     IsMousePointerEnabled = true,
-                     /* Polling checks every millisecond if a mouse button is pressed.
-                        Hook is more accurate, but may affect mouse performance as every mouse update must be processed.*/
-                     MouseClickDetectionMode = MouseDetectionMode.Hook
-                 },
-             };
-        }
-
-        public RecorderOptions GetOptions()
-        {
-            return _options;
         }
     }
 }

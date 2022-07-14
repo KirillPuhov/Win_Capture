@@ -4,3 +4,6 @@ D:\GitHub\Win_Capture\Settings\obj\x64\Debug\Settings.csproj.AssemblyReference.c
 D:\GitHub\Win_Capture\Settings\obj\x64\Debug\Settings.csproj.CoreCompileInputs.cache
 D:\GitHub\Win_Capture\Settings\obj\x64\Debug\Settings.dll
 D:\GitHub\Win_Capture\Settings\obj\x64\Debug\Settings.pdb
+D:\GitHub\Win_Capture\Settings\bin\x64\Debug\ScreenRecorderLib.dll
+D:\GitHub\Win_Capture\Settings\bin\x64\Debug\ScreenRecorderLib.xml
+D:\GitHub\Win_Capture\Settings\obj\x64\Debug\Settings.csproj.CopyComplete

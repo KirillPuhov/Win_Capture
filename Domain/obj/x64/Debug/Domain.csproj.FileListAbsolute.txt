@@ -8,3 +8,5 @@ D:\GitHub\Win_Capture\Domain\obj\x64\Debug\Domain.csproj.CoreCompileInputs.cache
 D:\GitHub\Win_Capture\Domain\obj\x64\Debug\Domain.csproj.CopyComplete
 D:\GitHub\Win_Capture\Domain\obj\x64\Debug\Domain.dll
 D:\GitHub\Win_Capture\Domain\obj\x64\Debug\Domain.pdb
+D:\GitHub\Win_Capture\Domain\bin\x64\Debug\Settings.dll
+D:\GitHub\Win_Capture\Domain\bin\x64\Debug\Settings.pdb
