@@ -1,8 +1,6 @@
 ﻿using Domain.Factories.Abstract_factory;
 using Domain.Models;
 using System;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace Domain.Factories
 {
@@ -31,13 +29,6 @@ namespace Domain.Factories
         public override IOutFile GetOutFile()
         {
             return _output;
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            var bmp = new Bitmap(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
-            var gr = Graphics.FromImage(bmp);
-            gr.CopyFromScreen(0, 0, 0, 0, new Size(bmp.Width, bmp.Height));
         }
     }
 }

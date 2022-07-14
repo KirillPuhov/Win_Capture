@@ -1,0 +1,6 @@
+D:\GitHub\Win_Capture\Settings\bin\x64\Debug\Settings.dll
+D:\GitHub\Win_Capture\Settings\bin\x64\Debug\Settings.pdb
+D:\GitHub\Win_Capture\Settings\obj\x64\Debug\Settings.csproj.AssemblyReference.cache
+D:\GitHub\Win_Capture\Settings\obj\x64\Debug\Settings.csproj.CoreCompileInputs.cache
+D:\GitHub\Win_Capture\Settings\obj\x64\Debug\Settings.dll
+D:\GitHub\Win_Capture\Settings\obj\x64\Debug\Settings.pdb

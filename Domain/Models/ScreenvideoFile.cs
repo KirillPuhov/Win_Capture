@@ -1,12 +1,7 @@
 ﻿using Domain.Services;
-using NAudio.Wave;
-using SharpAvi;
-using SharpAvi.Codecs;
+using ScreenRecorderLib;
 using System;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Windows.Threading;
 
 namespace Domain.Models
 {
@@ -14,23 +9,19 @@ namespace Domain.Models
     {
         private readonly string _fileName;
         private readonly DateTime _dateOfCreation;
-        private readonly string _extension = ".avi";
-        private readonly string _path;
+        private readonly string _extension = ".mp4";
 
-        private double _size;
+        private string _path;
 
-        private readonly DispatcherTimer _recordingTimer;
-        private readonly Stopwatch _recordingStopwatch = new Stopwatch();
-        private RecorderService _recorder;
-        private string _lastFileName;
+        private double _size = 1920*1080;
+
+        private RecorderService _recorderService;
 
         public ScreenvideoFile(string fileName, DateTime dateOfCreation, string path)
         {
             _fileName = fileName;
             _dateOfCreation = dateOfCreation;
             _path = path;
-
-            _recordingTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
 
             InitDefaultSettings();
         }
@@ -47,72 +38,20 @@ namespace Domain.Models
 
         public void doAction()
         {
-            if (_isRecording)
-                throw new InvalidOperationException("Запись уже идёт!");
-
-            _isRecording = true;
-
-            _recordingStopwatch.Reset();
-            _recordingTimer.Start();
-
-            _lastFileName = System.IO.Path.Combine(Path + "\\Win_Capture\\Video", FileName + $"{this.GetHashCode()}" + Extension);
-            var _bitRate = Mp3LameAudioEncoder.SupportedBitRates.OrderBy(br => br).ElementAt(_audioQuality);
-            _recorder = new RecorderService(_lastFileName,
-                _encoder, _encodingQuality,
-                _audioSourceIndex, _audioWaveFormat, _encodeAudio, _bitRate, _framesPerSecond);
-            _size = _recorder.ScreenWidth * _recorder.ScreenHeight;
-
-            _recordingStopwatch.Start();
+            _recorderService.CreateRecording();
         }
 
         public void stopAction()
         {
-            if (!_isRecording)
-                throw new InvalidOperationException("Запись не идёт!");
-
-            try
-            {
-                _recorder?.Dispose();
-                _recorder = null;
-            }
-            finally
-            {
-                _recordingTimer.Stop();
-                _recordingStopwatch.Stop();
-
-                _size = _recordingStopwatch.ElapsedMilliseconds * 
-                        _encodingQuality;
-
-                _isRecording = false;
-            }
-
+            _recorderService.EndRecording();
         }
-
-        
-        private int _audioSourceIndex;
-        private int _encodingQuality;
-        private int _framesPerSecond;
-        private int _audioQuality;
-        private bool _encodeAudio;
-        private bool _isRecording;
-        private FourCC _encoder;
-        private SupportedWaveFormat _audioWaveFormat;
-        
 
         private void InitDefaultSettings()
         {
             DirExist();
 
-            _encoder = CodecIds.MotionJpeg;
-            _encodingQuality = 70;
-            _framesPerSecond = 30;
-
-            _audioSourceIndex = -1;
-            _audioWaveFormat = SupportedWaveFormat.WAVE_FORMAT_44M16;
-            _encodeAudio = true;
-            _audioQuality = (Mp3LameAudioEncoder.SupportedBitRates.Length + 1) / 2;
-
-            _isRecording = false;
+            string videoPath = System.IO.Path.Combine(Path + "\\Win_Capture\\Video", FileName + $"{this.GetHashCode()}" + Extension);
+            _recorderService = new RecorderService(new RecorderSettings(bitrate:AudioBitrate.bitrate_128kbps, channels:AudioChannels.Stereo, isAudioEnabled:true, fps:144), videoPath);
         }
 
         private void DirExist()
