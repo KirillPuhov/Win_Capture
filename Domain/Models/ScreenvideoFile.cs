@@ -15,7 +15,7 @@ namespace Domain.Models
 
         private double _size = 1920*1080;
 
-        private RecorderService _recorderService;
+        private RecorderLogger _recorderLogger;
 
         public ScreenvideoFile(string fileName, DateTime dateOfCreation, string path)
         {
@@ -38,20 +38,22 @@ namespace Domain.Models
 
         public void doAction()
         {
-            _recorderService.CreateRecording();
+            _recorderLogger.CreateRecording();
         }
 
         public void stopAction()
         {
-            _recorderService.EndRecording();
+            _recorderLogger.EndRecording();
         }
 
         private void InitDefaultSettings()
         {
             DirExist();
 
-            string videoPath = System.IO.Path.Combine(Path + "\\Win_Capture\\Video", FileName + $"{this.GetHashCode()}" + Extension);
-            _recorderService = new RecorderService(new RecorderSettings(bitrate:AudioBitrate.bitrate_128kbps, channels:AudioChannels.Stereo, isAudioEnabled:true, fps:144), videoPath);
+            string _videoPath = System.IO.Path.Combine(Path + "\\Win_Capture\\Video", FileName + $"{this.GetHashCode()}" + Extension);
+            var _settings = new RecorderSettings(bitrate: AudioBitrate.bitrate_128kbps, channels: AudioChannels.Stereo, isAudioEnabled: true, fps: 60);
+
+            _recorderLogger = new RecorderLogger(new RecorderService(_settings, _videoPath));
         }
 
         private void DirExist()

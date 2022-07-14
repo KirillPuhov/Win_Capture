@@ -93,6 +93,8 @@
     <Compile Include="Models\ScreenshotFile.cs" />
     <Compile Include="Models\ScreenvideoFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IRecorderService.cs" />
+    <Compile Include="Services\RecorderLogger.cs" />
     <Compile Include="Services\RecorderService.cs" />
   </ItemGroup>
   <ItemGroup>
