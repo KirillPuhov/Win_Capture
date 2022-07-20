@@ -67,6 +67,19 @@ namespace AppUi.Window.ViewModel
             }
         }
 
+        private RelayCommand _openFolder;
+        public RelayCommand OpenFolder
+        {
+            get
+            {
+                return _openFolder ??
+                    (_openFolder = new RelayCommand(obj => 
+                    {
+                        _dialogService.StartProcess("explorer.exe", @"C:\Users\micro\Documents\Win_Capture");
+                    }));
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {

@@ -1,4 +1,5 @@
 ﻿using AppUi.Controls.Window;
+using Hardcodet.Wpf.TaskbarNotification;
 using System.Windows;
 
 namespace AppUi.Window
@@ -58,9 +59,12 @@ namespace AppUi.Window
             set { SetValue(MaximizeBoxProperty, value); }
         }
 
+        private TaskbarIcon _taskbar;
+
         public RayeWindow() : base()
         {
             base.Style = (Style)FindResource("RayeWindowStyle");
+            _taskbar = new TaskbarIcon();
         }
 
         public override void OnApplyTemplate()
@@ -80,7 +84,18 @@ namespace AppUi.Window
 
         private void OnMaximize(object sender, RoutedEventArgs e)
         {
-            base.WindowState = base.WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal;
+            _taskbar.Visibility = Visibility.Visible;
+            _taskbar.TrayLeftMouseDown += TaskbarIcon_TrayLeftMouseDown;
+
+            if (WindowState == WindowState.Normal)
+            {
+                base.Hide();
+            }
+        }
+
+        private void TaskbarIcon_TrayLeftMouseDown(object sender, RoutedEventArgs e)
+        {
+            base.Show();
         }
 
         private void OnClose(object sender, RoutedEventArgs e)

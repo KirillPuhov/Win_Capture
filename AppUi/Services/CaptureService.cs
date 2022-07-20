@@ -30,7 +30,8 @@ namespace AppUi.Services
 
         public void Stop()
         {
-            _output.stopAction();
+            if (_output != null)
+                _output.stopAction();
         }
 
         public IOutFile GetOutFile()

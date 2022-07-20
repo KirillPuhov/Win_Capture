@@ -1,5 +1,6 @@
 ﻿using AppUi.Controls.Window;
 using Microsoft.Win32;
+using System.Diagnostics;
 using System.Windows;
 
 namespace AppUi.Services
@@ -45,6 +46,11 @@ namespace AppUi.Services
             _info.Owner = _ownerWindow;
             _info.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             _info.ShowDialog();
+        }
+
+        public void StartProcess(string application, string argument)
+        {
+            Process.Start(application, argument);
         }
     }
 }

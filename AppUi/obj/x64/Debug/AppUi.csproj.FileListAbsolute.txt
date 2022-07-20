@@ -32,3 +32,11 @@ D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi.exe
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi.pdb
 D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\ScreenRecorderLib.dll
 D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\ScreenRecorderLib.xml
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\xaml_icons\app.baml
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\xaml_icons\cursor.baml
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\xaml_icons\folder.baml
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\xaml_icons\loop.baml
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\xaml_icons\settings.baml
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\xaml_icons\today.baml
+D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\Hardcodet.NotifyIcon.Wpf.dll
+D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\Hardcodet.NotifyIcon.Wpf.xml

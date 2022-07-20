@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace AppUi.Services
 {
@@ -8,7 +9,7 @@ namespace AppUi.Services
         private readonly System.Windows.Window _window;
 
         public HelperService() =>
-            _window = System.Windows.Application.Current.MainWindow;
+            _window = Application.Current.MainWindow;
 
         public void PauseBeforeAction(Action action)
         {
