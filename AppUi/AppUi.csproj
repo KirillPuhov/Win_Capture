@@ -113,6 +113,8 @@
     <Compile Include="Services\ICaptureService.cs" />
     <Compile Include="Services\IDialogService.cs" />
     <Compile Include="Services\IHelper.cs" />
+    <Compile Include="Services\ITimerService.cs" />
+    <Compile Include="Services\TimerService.cs" />
     <Compile Include="Window\Command\RelayCommand.cs" />
     <Compile Include="Window\DI\Container.cs" />
     <Compile Include="Window\DI\IDiContainer.cs" />
