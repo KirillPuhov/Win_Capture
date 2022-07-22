@@ -6,6 +6,10 @@ namespace AppUi.Services
     {
         void Start(EventHandler handler);
 
+        void Pause();
+
+        void Resume();
+
         void Stop();
     }
 }

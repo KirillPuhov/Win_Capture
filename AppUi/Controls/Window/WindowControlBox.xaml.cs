@@ -55,9 +55,6 @@ namespace AppUi.Controls.Window
         {
             if (OnMaximize != null)
                 OnMaximize(sender, e);
-
-            RestoreIcon.Visibility = (MaximizeIcon.Visibility == Visibility.Visible) ? Visibility.Visible : Visibility.Hidden;
-            MaximizeIcon.Visibility = (MaximizeIcon.Visibility != Visibility.Visible) ? Visibility.Visible : Visibility.Hidden;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

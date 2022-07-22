@@ -57,6 +57,10 @@ namespace Domain.Models
 
         public void stopAction() { }
 
+        public void doPause() { }
+
+        public void doResume() { }
+
         public override int GetHashCode()
         {
             unchecked

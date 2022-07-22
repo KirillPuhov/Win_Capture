@@ -1,12 +1,11 @@
 ﻿using AppUi.Services;
 using AppUi.Window.Command;
 using AppUi.Window.DI;
+using Settings;
 using System;
 using System.ComponentModel;
-using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace AppUi.Window.ViewModel
 {
@@ -17,6 +16,8 @@ namespace AppUi.Window.ViewModel
         private readonly IDialogService _dialogService;
         private readonly ICaptureService _captureService;
         private readonly ITimerService _timerService;
+
+        private readonly ApplicationSettings _applicationSettings;
 
         private string _hours = string.Format("{0:00}", 0);
         public string Hours
@@ -51,6 +52,37 @@ namespace AppUi.Window.ViewModel
             }
         }
 
+        private string _folderDir;
+        public string FolderDirectory
+        {
+            get { return _folderDir; }
+            set
+            {
+                _folderDir = value;
+                OnPropertyChanged("FolderDirectory");
+            }
+        }
+
+        private bool _isPause = false;
+        public bool IsPause
+        {
+            get { return _isPause; }
+            set
+            {
+                _isPause = value;
+            }
+        }
+
+        private bool _isRecord = false;
+        public bool IsRecord
+        {
+            get { return _isRecord; }
+            set
+            {
+                _isRecord = value;
+            }
+        }
+
         #region ctor
 
         public MainViewModel(IDiContainer container)
@@ -60,6 +92,9 @@ namespace AppUi.Window.ViewModel
             _dialogService  = _container.Navigate<IDialogService>("DialogService");
             _captureService = _container.Navigate<ICaptureService>("CaptureService");
             _timerService   = _container.Navigate<ITimerService>("TimerService");
+
+            _applicationSettings = new ApplicationSettings();
+            FolderDirectory = _applicationSettings.FolderDirectory;
         }
 
         #endregion
@@ -72,7 +107,7 @@ namespace AppUi.Window.ViewModel
                 return _screenshot ??
                     (_screenshot = new RelayCommand(obj => 
                     {
-                        _captureService.HideWindowAndStart(CaptureType.Screenshot, "screenshot", @"C:\Users\micro\Documents");
+                        _captureService.HideWindowAndStart(CaptureType.Screenshot, "screenshot", FolderDirectory);
                     }));
             }
         }
@@ -88,13 +123,29 @@ namespace AppUi.Window.ViewModel
                 return _startRecord ??
                     (_startRecord = new RelayCommand(obj => 
                     {
-                        _timerService.Start(Timer_Tick);
+                        if (!IsRecord)
+                        {
+                            _timerService.Start(Timer_Tick);
 
-                        _threadStart = new ThreadStart(() 
-                            => { _captureService.Start(CaptureType.Screenvideo, "video", @"C:\Users\micro\Documents"); });
+                            _threadStart = new ThreadStart(()
+                                => { _captureService.Start(CaptureType.Screenvideo, "video", FolderDirectory); });
 
-                        _thread = new Thread(_threadStart, 100);
-                        _thread.Start();
+                            _thread = new Thread(_threadStart, 100);
+                            _thread.Start();
+                            IsRecord = true;
+                        }
+                        else
+                        {
+                            _captureService.Stop();
+                            _thread?.Abort();
+                            _thread = null;
+
+                            _timerService.Stop();
+                            ClearTimerMethod();
+                            IsRecord = false;
+                        }
+
+                        
                     }));
             }
         }
@@ -124,32 +175,26 @@ namespace AppUi.Window.ViewModel
             Seconds = string.Format("{0:00}", _second);
         }
 
-        private RelayCommand _stopRecord;
-        public RelayCommand StopRecord
+        private RelayCommand _pause;
+        public RelayCommand Pause
         {
             get
             {
-                return _stopRecord ??
-                    (_stopRecord = new RelayCommand(obj => 
+                return _pause ??
+                    (_pause = new RelayCommand(obj => 
                     {
-                        _captureService.Stop();
-                        _thread?.Abort();
-                        _thread = null;
-
-                        _timerService.Stop();
-                    }));
-            }
-        }
-
-        private RelayCommand _openFolder;
-        public RelayCommand OpenFolder
-        {
-            get
-            {
-                return _openFolder ??
-                    (_openFolder = new RelayCommand(obj => 
-                    {
-                        _dialogService.StartProcess("explorer.exe", @"C:\Users\micro\Documents\Win_Capture");
+                        if (!IsPause)
+                        {
+                            _captureService.Pause();
+                            _timerService.Pause();
+                            IsPause = true;
+                        }
+                        else
+                        {
+                            _captureService.Resume();
+                            _timerService.Resume();
+                            IsPause = false;
+                        }
                     }));
             }
         }
@@ -160,11 +205,44 @@ namespace AppUi.Window.ViewModel
             get
             {
                 return _clearTimer ??
-                    (_clearTimer = new RelayCommand(obj => 
+                    (_clearTimer = new RelayCommand(obj =>
                     {
-                        Hours   = string.Format("{0:00}", 0);
-                        Minutes = string.Format("{0:00}", 0);
-                        Seconds = string.Format("{0:00}", 0);
+                        ClearTimerMethod();
+                    }));
+            }
+        }
+
+        private void ClearTimerMethod()
+        {
+            Hours   = string.Format("{0:00}", 0);
+            Minutes = string.Format("{0:00}", 0);
+            Seconds = string.Format("{0:00}", 0);
+        }
+
+        private RelayCommand _openFolder;
+        public RelayCommand OpenFolder
+        {
+            get
+            {
+                return _openFolder ??
+                    (_openFolder = new RelayCommand(obj => 
+                    {
+                        _dialogService.OpenFolder();
+                    }));
+            }
+        }
+
+
+        private RelayCommand _changeFolder;
+        public RelayCommand ChangeFolder
+        {
+            get
+            {
+                return _changeFolder ??
+                    (_changeFolder = new RelayCommand(obj => 
+                    {
+                        _dialogService.ShowDialog();
+                        FolderDirectory = _dialogService.Result;
                     }));
             }
         }

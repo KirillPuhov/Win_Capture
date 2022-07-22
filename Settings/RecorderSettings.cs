@@ -10,15 +10,15 @@ namespace Settings
 
         private RecorderOptions _options;
 
-        private readonly AudioBitrate  _bitrate;
-        private readonly AudioChannels _channels;
-        private readonly bool          _isAudioEnabled;
-        private readonly int           _fps;
+        private AudioBitrate  _bitrate;
+        private AudioChannels _channels;
+        private bool          _isAudioEnabled;
+        private int           _fps;
 
-        private readonly bool _isMouseClicksDetected;
-        private readonly bool _isMousePointerEnabled;
-        private readonly string _mouseLeftClickDetectionColor;
-        private readonly string _mouseRightClickDetectionColor;
+        private bool   _isMouseClicksDetected;
+        private bool   _isMousePointerEnabled;
+        private string _mouseLeftClickDetectionColor;
+        private string _mouseRightClickDetectionColor;
 
         public RecorderSettings()
         {
@@ -44,13 +44,87 @@ namespace Settings
             _mouseRightClickDetectionColor = _init.ReadINI("Recorder", "MouseRightClickDetectionColor");
         }
 
-        public AudioBitrate Bitrate  => _bitrate;
 
-        public AudioChannels Chanels => _channels;
+        public AudioBitrate Bitrate
+        {
+            get { return _bitrate; }
+            set
+            {
+                _bitrate = value;
+                _init.Write("Recorder", "Bitrate", Enum.GetName(typeof(AudioBitrate), _bitrate));
+            }
+        }
 
-        public bool IsAudioEnabled   => _isAudioEnabled;
+        public AudioChannels Chanels
+        {
+            get { return _channels; }
+            set
+            {
+                _channels = value;
+                _init.Write("Recorder", "Chanels", Enum.GetName(typeof(AudioChannels), _channels));
+            }
+        }
 
-        public int Fps               => _fps;
+        public bool IsAudioEnabled
+        {
+            get { return _isAudioEnabled; }
+            set
+            {
+                _isAudioEnabled = value;
+                _init.Write("Recorder", "IsAudioEnabled", _isAudioEnabled.ToString());
+            }
+        }
+
+        public int Fps
+        {
+            get { return _fps; }
+            set
+            {
+                _fps = value;
+                _init.Write("Recorder", "Fps", _fps.ToString());
+            }
+        }
+
+        
+        public bool IsMouseClicksDetected
+        {
+            get { return _isMouseClicksDetected; }
+            set
+            {
+                _isMouseClicksDetected = value;
+                _init.Write("Recorder", "IsMouseClicksDetected", _isMouseClicksDetected.ToString());
+            }
+        }
+
+        public bool IsMousePointerEnabled
+        {
+            get { return _isMousePointerEnabled; }
+            set
+            {
+                _isMousePointerEnabled = value;
+                _init.Write("Recorder", "IsMousePointerEnabled", _isMousePointerEnabled.ToString());
+            }
+        }
+
+        public string MouseLeftClickDetectionColor
+        {
+            get { return _mouseLeftClickDetectionColor; }
+            set
+            {
+                _mouseLeftClickDetectionColor = value;
+                _init.Write("Recorder", "MouseLeftClickDetectionColor", _mouseLeftClickDetectionColor);
+            }
+        }
+
+        public string MouseRightClickDetectionColor
+        {
+            get { return _mouseRightClickDetectionColor; }
+            set
+            {
+                _mouseRightClickDetectionColor = value;
+                _init.Write("Recorder", "MouseRightClickDetectionColor", _mouseRightClickDetectionColor);
+            }
+        }
 
         public RecorderOptions GetOptions()
         {

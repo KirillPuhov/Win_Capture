@@ -59,6 +59,18 @@ namespace Domain.Services
             SetLog(string.Format("[{0}] Start recording\n", DateTime.Now));
         }
 
+        public void Pause()
+        {
+            _recorderService.Pause();
+            SetLog(string.Format("[{0}] Pause\n", DateTime.Now));
+        }
+
+        public void Resume()
+        {
+            _recorderService.Resume();
+            SetLog(string.Format("[{0}] Resume\n", DateTime.Now));
+        }
+
         public void EndRecording()
         {
             _recorderService.EndRecording();

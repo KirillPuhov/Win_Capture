@@ -28,6 +28,16 @@ namespace AppUi.Services
             _helper.WindowShow();
         }
 
+        public void Pause()
+        {
+            _output.doPause();
+        }
+
+        public void Resume()
+        {
+            _output.doResume();
+        }
+
         public void Stop()
         {
             if (_output != null)

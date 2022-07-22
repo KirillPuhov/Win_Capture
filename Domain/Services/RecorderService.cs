@@ -41,7 +41,7 @@ namespace Domain.Services
         }
 
 
-        public RecorderService(RecorderSettings options, string path) 
+        public RecorderService(RecorderSettings options, string path)
         {
             this._options = options.GetOptions();
             this._path = path;
@@ -51,7 +51,7 @@ namespace Domain.Services
         public void CreateRecording()
         {
             _rec = Recorder.CreateRecorder(_options);
-            
+
             _rec.OnRecordingComplete += Rec_OnRecordingComplete;
             _rec.OnRecordingFailed += Rec_OnRecordingFailed;
             _rec.OnStatusChanged += Rec_OnStatusChanged;
@@ -63,6 +63,16 @@ namespace Domain.Services
         {
             _rec = Recorder.CreateRecorder();
             _rec.Record(_path);
+        }
+
+        public void Pause()
+        {
+            _rec.Pause();
+        }
+
+        public void Resume()
+        {
+            _rec.Resume();
         }
 
         public void EndRecording()

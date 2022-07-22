@@ -1,5 +1,5 @@
 ﻿using AppUi.Controls.Window;
-using Microsoft.Win32;
+using Settings;
 using System.Diagnostics;
 using System.Windows;
 
@@ -9,25 +9,31 @@ namespace AppUi.Services
     {
         private readonly System.Windows.Window _ownerWindow;
 
+        private ApplicationSettings _applicationSettings;
+
         private string _result;
         public string Result
         {
             get { return _result; }
-            set 
+            private set 
             { 
-                _result = value; 
+                _result = value;
+                _applicationSettings.FolderDirectory = _result;
             }
         }
 
-        public DialogService() => 
-                _ownerWindow = Application.Current.MainWindow.Owner;
+        public DialogService()
+        {
+            _ownerWindow = Application.Current.MainWindow.Owner;
+            _applicationSettings = new ApplicationSettings();
+        }
 
         public bool ShowDialog()
         {
-            var _fileDialog = new OpenFileDialog();
-            if (_fileDialog.ShowDialog() == true)
+            var _directoryDialog = new System.Windows.Forms.FolderBrowserDialog();
+            if (_directoryDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                Result = _fileDialog.FileName;
+                Result = _directoryDialog.SelectedPath;
 
                 return true;
             }
@@ -48,9 +54,9 @@ namespace AppUi.Services
             _info.ShowDialog();
         }
 
-        public void StartProcess(string application, string argument)
+        public void OpenFolder()
         {
-            Process.Start(application, argument);
+            Process.Start("explorer.exe", _applicationSettings.FolderDirectory + "\\Win_Capture");
         }
     }
 }

@@ -17,5 +17,9 @@ namespace Domain.Models
         void doAction();
 
         void stopAction();
+
+        void doPause();
+
+        void doResume();
     }
 }

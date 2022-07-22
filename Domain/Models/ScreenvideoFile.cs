@@ -1,5 +1,4 @@
 ﻿using Domain.Services;
-using ScreenRecorderLib;
 using Settings;
 using System;
 using System.IO;
@@ -39,6 +38,16 @@ namespace Domain.Models
         public void doAction()
         {
             _recorderLogger.CreateRecording();
+        }
+
+        public void doPause()
+        {
+            _recorderLogger.Pause();
+        }
+
+        public void doResume()
+        {
+            _recorderLogger.Resume();
         }
 
         public void stopAction()

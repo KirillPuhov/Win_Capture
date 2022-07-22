@@ -7,5 +7,9 @@
         void Start(CaptureType type, string fileName, string path);
 
         void Stop();
+
+        void Pause();
+
+        void Resume();
     }
 }

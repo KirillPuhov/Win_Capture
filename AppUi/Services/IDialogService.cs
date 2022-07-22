@@ -2,12 +2,14 @@
 {
     public interface IDialogService
     {
+        string Result { get; }
+
         bool ShowDialog();
 
         void ShowInfo(string info);
 
         void ShowError(string error);
 
-        void StartProcess(string application, string argument);
+        void OpenFolder();
     }
 }

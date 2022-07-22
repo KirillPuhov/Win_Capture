@@ -8,6 +8,10 @@ namespace Domain.Services
 
         void CreateDefaultRecording();
 
+        void Pause();
+
+        void Resume();
+
         void EndRecording();
 
         string Path { get; set; }
