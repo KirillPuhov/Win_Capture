@@ -84,7 +84,7 @@ namespace AppUi.Controls.Window {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AppUi;component/controls/window/windowcontrolbox.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Win capture;component/controls/window/windowcontrolbox.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Controls\Window\WindowControlBox.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

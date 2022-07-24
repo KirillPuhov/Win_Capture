@@ -1,8 +1,11 @@
 ﻿using AppUi.Services;
 using AppUi.Window.Command;
 using AppUi.Window.DI;
+using Domain.Models;
 using Settings;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading;
@@ -13,9 +16,10 @@ namespace AppUi.Window.ViewModel
     {
         private readonly IDiContainer _container;
 
-        private readonly IDialogService _dialogService;
+        private readonly IDialogService  _dialogService;
         private readonly ICaptureService _captureService;
-        private readonly ITimerService _timerService;
+        private readonly ITimerService   _timerService;
+        private readonly IRecentService  _recentService;
 
         private readonly ApplicationSettings _applicationSettings;
 
@@ -83,6 +87,8 @@ namespace AppUi.Window.ViewModel
             }
         }
 
+        public ObservableCollection<IOutFile> RecentList { get; set; }
+
         #region ctor
 
         public MainViewModel(IDiContainer container)
@@ -92,9 +98,11 @@ namespace AppUi.Window.ViewModel
             _dialogService  = _container.Navigate<IDialogService>("DialogService");
             _captureService = _container.Navigate<ICaptureService>("CaptureService");
             _timerService   = _container.Navigate<ITimerService>("TimerService");
+            _recentService  = _container.Navigate<IRecentService>("RecentService");
 
             _applicationSettings = new ApplicationSettings();
             FolderDirectory = _applicationSettings.FolderDirectory;
+            RecentList = _recentService.RecentFiles;
         }
 
         #endregion
@@ -108,6 +116,9 @@ namespace AppUi.Window.ViewModel
                     (_screenshot = new RelayCommand(obj => 
                     {
                         _captureService.HideWindowAndStart(CaptureType.Screenshot, "screenshot", FolderDirectory);
+
+                        var _outFile = _captureService.GetOutFile();
+                        _recentService.AddRecentFile(_outFile);
                     }));
             }
         }
@@ -142,6 +153,10 @@ namespace AppUi.Window.ViewModel
 
                             _timerService.Stop();
                             ClearTimerMethod();
+
+                            var _outFile = _captureService.GetOutFile();
+                            _recentService.AddRecentFile(_outFile);
+
                             IsRecord = false;
                         }
 

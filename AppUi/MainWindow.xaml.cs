@@ -15,6 +15,7 @@ namespace AppUi
             _container.Register<IDialogService, DialogService>(new DialogService(), "DialogService");
             _container.Register<ICaptureService, CaptureService>(new CaptureService(), "CaptureService");
             _container.Register<ITimerService, TimerService>(new TimerService(), "TimerService");
+            _container.Register<IRecentService, RecentService>(new RecentService(), "RecentService");
 
             DataContext = new MainViewModel(_container);
         }

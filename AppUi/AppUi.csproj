@@ -7,7 +7,7 @@
     <ProjectGuid>{95C60F52-9126-4D3C-85B9-C5960EC1A731}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>AppUi</RootNamespace>
-    <AssemblyName>AppUi</AssemblyName>
+    <AssemblyName>Win capture</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -74,6 +74,9 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>player-record_64x64.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Hardcodet.NotifyIcon.Wpf, Version=1.1.0.0, Culture=neutral, PublicKeyToken=682384a853a08aad, processorArchitecture=MSIL">
       <HintPath>..\packages\Hardcodet.NotifyIcon.Wpf.1.1.0\lib\net472\Hardcodet.NotifyIcon.Wpf.dll</HintPath>
@@ -83,6 +86,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -114,7 +118,9 @@
     <Compile Include="Services\ICaptureService.cs" />
     <Compile Include="Services\IDialogService.cs" />
     <Compile Include="Services\IHelper.cs" />
+    <Compile Include="Services\IRecentService.cs" />
     <Compile Include="Services\ITimerService.cs" />
+    <Compile Include="Services\RecentService.cs" />
     <Compile Include="Services\TimerService.cs" />
     <Compile Include="Window\Command\RelayCommand.cs" />
     <Compile Include="Window\DI\Container.cs" />
@@ -169,6 +175,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="xaml_icons\soundwave.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="xaml_icons\today.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -214,6 +224,14 @@
       <Name>Settings</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Material_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\player-record_64x64.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="player-record_64x64.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

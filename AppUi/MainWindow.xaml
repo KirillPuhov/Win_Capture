@@ -5,11 +5,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppUi"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         xmlns:window="clr-namespace:AppUi.Window"
         MinHeight="100"
         MinWidth="420"
-        Title="Win Capture" Width="420" Height="200" WindowStartupLocation="CenterScreen" IsHeaderTextVisible="False" SnapsToDevicePixels="True" ResizeMode="NoResize" ShowInTaskbar="True">
+        Title="Win Capture" Width="500" Height="400" WindowStartupLocation="CenterScreen" IsHeaderTextVisible="False" SnapsToDevicePixels="True" ResizeMode="NoResize" ShowInTaskbar="True">
     <window:RayeWindow.HeaderContent>
 
         <Grid HorizontalAlignment="Left">
@@ -48,11 +49,15 @@
                     </Canvas>
                 </Viewbox>
             </Button>
-            
+
         </Grid>
     </window:RayeWindow.HeaderContent>
     <Grid>
         <Grid Margin="10,10,10,0" VerticalAlignment="Top" Height="35">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Resources/Material_1.jpg" Stretch="UniformToFill" AlignmentY="Bottom"/>
+            </Grid.Background>
+
             <Grid.ColumnDefinitions>
 
                 <ColumnDefinition Width="120"/>
@@ -63,77 +68,47 @@
 
             <Grid Grid.Column="0">
 
-                <Grid.ColumnDefinitions>
-
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
-
-                </Grid.ColumnDefinitions>
-
-                <Button Style="{DynamicResource WindowButtonStyle}" FontSize="15" Background="Transparent" Grid.Column="0">
-
-                    <Viewbox Width="40" Height="35" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-                        <Canvas Height="100" Width="100">
-                            <Path Fill="Black" Data="m75 20.37h-17.19a5 5 0 0 0 -5 5v17a5 5 0 0 0 5 5h17.19a5 5 0 0 0 5-5v-17a5 5 0 0 0 -5-5zm-1 6v15h-15.18v-15z" />
-                            <Path Fill="Black" Data="m28 51a1.64 1.64 0 0 0 -1.56 1.71l-.08 3.51a1.64 1.64 0 0 0 1.64 1.61h6.2a1.08 1.08 0 0 1 .82.33 1.18 1.18 0 0 1 .08 1.71l-14.56 14.47a1.68 1.68 0 0 0 -.09 2.37l2.47 2.45a2.12 2.12 0 0 0 2.55.08l14.68-14.55a.88.88 0 0 1 .58-.25 1.28 1.28 0 0 1 1.4 1.06l.08 5.22a1.64 1.64 0 0 0 1.64 1.63l3.54.09a1.65 1.65 0 0 0 1.61-1.64v-18a1.65 1.65 0 0 0 -1.65-1.64z" />
-                        </Canvas>
-                    </Viewbox>
-
-                </Button>
-
-                <Button Style="{DynamicResource WindowButtonStyle}" FontSize="15" Background="Transparent" Grid.Column="1">
-
-                    <Viewbox Width="40" Height="34" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-                        <Canvas Height="100" Width="100">
-                            <Canvas>
-                                <Path Fill="Black" Data="M50,20c-16.5,0-30,13.5-30,30s13.5,30,30,30s30-13.5,30-30S66.5,20,50,20z M50,74c-13.2,0-24-10.8-24-24    s10.8-24,24-24s24,10.8,24,24S63.2,74,50,74z" />
-                            </Canvas>
-                            <Canvas>
-                                <Path Fill="Black" Data="M53,48.8V36c0-1.1-0.9-2-2-2h-2c-1.1,0-2,0.9-2,2v14c0,0.8,0.3,1.6,0.9,2.1l9.6,9.6c0.8,0.8,2,0.8,2.8,0    l1.4-1.4c0.8-0.8,0.8-2,0-2.8L53,48.8z" />
-                            </Canvas>
-                        </Canvas>
-                    </Viewbox>
-
-                </Button>
-
-                <Button Style="{DynamicResource WindowButtonStyle}" FontSize="15" Background="Transparent" Grid.Column="2">
-
-                    <Viewbox Width="40" Height="32" Stretch="Uniform" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-                        <Canvas Height="100" Width="100">
-                            <Path Fill="Black" Data="M62,28H31.5c-1.7,0-3.1,1.4-3.1,3.1v30.5h-4.6c-2.1,0-3.8-1.7-3.8-3.8V23.3c0-2.1,1.7-3.8,3.8-3.8h34.5  c2.1,0,3.8,1.7,3.8,3.8V28z" />
-                            <Path Fill="Black" Data="M41.8,37.6h34.5c2.1,0,3.8,1.7,3.8,3.8v34.5c0,2.1-1.7,3.8-3.8,3.8H41.8c-2.1,0-3.8-1.7-3.8-3.8V41.3  C38,39.3,39.7,37.6,41.8,37.6z" />
-                        </Canvas>
-                    </Viewbox>
-
-                </Button>
+                <Viewbox Height="52" Stretch="Uniform" HorizontalAlignment="Right" VerticalAlignment="Center" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    <Canvas Height="24" Width="24">
+                        <Path Fill="White" Data="M21,14 L19,14 L19,10 L21,10 L21,14 Z M17,16 L15,16 L15,8 L17,8 L17,16 Z M13,19 L11,19 L11,5 L13,5 L13,19 Z M9,16 L7,16 L7,8 L9,8 L9,16 Z M5,14 L3,14 L3,10 L5,10 L5,14 Z" />
+                    </Canvas>
+                </Viewbox>
+                <Viewbox Height="52" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    <Canvas Height="24" Width="24">
+                        <Path Fill="White" Data="M21,14 L19,14 L19,10 L21,10 L21,14 Z M17,16 L15,16 L15,8 L17,8 L17,16 Z M13,19 L11,19 L11,5 L13,5 L13,19 Z M9,16 L7,16 L7,8 L9,8 L9,16 Z M5,14 L3,14 L3,10 L5,10 L5,14 Z" />
+                    </Canvas>
+                </Viewbox>
+                <Viewbox Height="52" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Center" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    <Canvas Height="24" Width="24">
+                        <Path Fill="White" Data="M21,14 L19,14 L19,10 L21,10 L21,14 Z M17,16 L15,16 L15,8 L17,8 L17,16 Z M13,19 L11,19 L11,5 L13,5 L13,19 Z M9,16 L7,16 L7,8 L9,8 L9,16 Z M5,14 L3,14 L3,10 L5,10 L5,14 Z" />
+                    </Canvas>
+                </Viewbox>
 
             </Grid>
 
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="91" Height="35" Grid.Column="1">
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="160" Height="35" Grid.Column="1">
 
                 <Grid.ColumnDefinitions>
 
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="3" />
-                    
+
                     <ColumnDefinition Width="1*" />
-                    
+
                     <ColumnDefinition Width="3" />
                     <ColumnDefinition Width="1*" />
 
                 </Grid.ColumnDefinitions>
 
-                <TextBlock x:Name="Hours" Grid.Column="0" Text="{Binding Path=Hours}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22.5" FontWeight="Medium"/>
-                <TextBlock Grid.Column="1" Text=":" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22.5" FontWeight="Medium"/>
+                <TextBlock Foreground="White" x:Name="Hours" Grid.Column="0" Text="{Binding Path=Hours}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22.5" FontWeight="Medium"/>
+                <TextBlock Foreground="White" Grid.Column="1" Text=":" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22.5" FontWeight="Medium"/>
 
-                <TextBlock x:Name="Minutes" Grid.Column="2" Text="{Binding Path=Minutes}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22.5" FontWeight="Medium"/>
-                
-                <TextBlock Grid.Column="3" Text=":" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22.5" FontWeight="Medium"/>
-                <TextBlock x:Name="Seconds" Grid.Column="4" Text="{Binding Path=Seconds}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22.5" FontWeight="Medium"/>
+                <TextBlock Foreground="White" x:Name="Minutes" Grid.Column="2" Text="{Binding Path=Minutes}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22.5" FontWeight="Medium"/>
+
+                <TextBlock Foreground="White" Grid.Column="3" Text=":" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22.5" FontWeight="Medium"/>
+                <TextBlock Foreground="White" x:Name="Seconds" Grid.Column="4" Text="{Binding Path=Seconds}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22.5" FontWeight="Medium"/>
 
             </Grid>
-            
 
             <Grid Grid.Column="2">
 
@@ -149,7 +124,7 @@
 
                     <Viewbox Width="40" Height="32" Stretch="Uniform" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
                         <Canvas Height="100" Width="100">
-                            <Path Fill="Black" Data="M76.5,58.3c0,0.1,0,0.2-0.1,0.2c-0.3,1.1-0.7,2.2-1.1,3.3c-0.5,1.2-1,2.3-1.6,3.4c-1.2,2.2-2.7,4.2-4.5,6  c-1.7,1.8-3.7,3.4-5.9,4.7c-2.2,1.3-4.5,2.3-7,3c-2.5,0.7-5.1,1.1-7.7,1.1C32.8,80,20,67.2,20,51.3s12.8-28.6,28.6-28.6  c5.3,0,10.3,1.5,14.6,4c0,0,0,0,0.1,0c2.1,1.2,4,2.7,5.6,4.4c0.5,0.4,0.8,0.7,1.2,1.2c0.9,0.8,1.6,0.3,1.6-0.9V22c0-1.1,0.9-2,2-2h4  c1.1,0,2,0.9,2.2,2v24.5c0,0.9-0.8,1.8-1.8,1.8H53.6c-1.1,0-1.9-0.8-1.9-1.9v-4.2c0-1.1,0.9-2,2-2h9.4c0.8,0,1.4-0.2,1.7-0.7  c-3.6-5-9.6-8.3-16.2-8.3c-11.1,0-20.1,9-20.1,20.1s9,20.1,20.1,20.1c8.7,0,16.1-5.5,18.9-13.3c0,0,0.3-1.8,1.7-1.8  c1.4,0,4.8,0,5.7,0c0.8,0,1.6,0.6,1.6,1.5C76.5,58,76.5,58.1,76.5,58.3z" />
+                            <Path Fill="White" Data="M76.5,58.3c0,0.1,0,0.2-0.1,0.2c-0.3,1.1-0.7,2.2-1.1,3.3c-0.5,1.2-1,2.3-1.6,3.4c-1.2,2.2-2.7,4.2-4.5,6  c-1.7,1.8-3.7,3.4-5.9,4.7c-2.2,1.3-4.5,2.3-7,3c-2.5,0.7-5.1,1.1-7.7,1.1C32.8,80,20,67.2,20,51.3s12.8-28.6,28.6-28.6  c5.3,0,10.3,1.5,14.6,4c0,0,0,0,0.1,0c2.1,1.2,4,2.7,5.6,4.4c0.5,0.4,0.8,0.7,1.2,1.2c0.9,0.8,1.6,0.3,1.6-0.9V22c0-1.1,0.9-2,2-2h4  c1.1,0,2,0.9,2.2,2v24.5c0,0.9-0.8,1.8-1.8,1.8H53.6c-1.1,0-1.9-0.8-1.9-1.9v-4.2c0-1.1,0.9-2,2-2h9.4c0.8,0,1.4-0.2,1.7-0.7  c-3.6-5-9.6-8.3-16.2-8.3c-11.1,0-20.1,9-20.1,20.1s9,20.1,20.1,20.1c8.7,0,16.1-5.5,18.9-13.3c0,0,0.3-1.8,1.7-1.8  c1.4,0,4.8,0,5.7,0c0.8,0,1.6,0.6,1.6,1.5C76.5,58,76.5,58.1,76.5,58.3z" />
                         </Canvas>
                     </Viewbox>
 
@@ -159,8 +134,8 @@
 
                     <Viewbox Width="40" Height="32" Stretch="Uniform" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
                         <Canvas Height="100" Width="100">
-                            <Path Fill="Black" Data="M75,34.7H46.6c-1.8,0-3.4-1-4.4-2.5l-4.4-7.6C37,23,35.4,22,33.5,22H25c-2.8,0-5,2.3-5,5.1v10.2v35.6  c0,2.8,2.2,5.1,5,5.1h50c2.8,0,5-2.3,5-5.1V39.8C80,37,77.8,34.7,75,34.7z" />
-                            <Path Fill="Black" Data="M75,24.5H44.9c-0.5,0-0.8,0.5-0.5,0.9l2,3.4c0.2,0.5,0.6,0.8,1.1,0.8H75c1.4,0,2.8,0.3,3.9,0.8  c0.5,0.3,1.1-0.1,1.1-0.8l0,0C80,26.8,77.8,24.5,75,24.5z" />
+                            <Path Fill="White" Data="M75,34.7H46.6c-1.8,0-3.4-1-4.4-2.5l-4.4-7.6C37,23,35.4,22,33.5,22H25c-2.8,0-5,2.3-5,5.1v10.2v35.6  c0,2.8,2.2,5.1,5,5.1h50c2.8,0,5-2.3,5-5.1V39.8C80,37,77.8,34.7,75,34.7z" />
+                            <Path Fill="White" Data="M75,24.5H44.9c-0.5,0-0.8,0.5-0.5,0.9l2,3.4c0.2,0.5,0.6,0.8,1.1,0.8H75c1.4,0,2.8,0.3,3.9,0.8  c0.5,0.3,1.1-0.1,1.1-0.8l0,0C80,26.8,77.8,24.5,75,24.5z" />
                         </Canvas>
                     </Viewbox>
 
@@ -169,7 +144,7 @@
 
                     <Viewbox Width="40" Height="35" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
                         <Canvas Height="100" Width="100">
-                            <Path Fill="Black" Data="M50.1,41.3c-4.9,0-8.8,3.9-8.8,8.8s3.9,8.8,8.8,8.8s8.8-3.9,8.8-8.8S55,41.3,50.1,41.3z M76.4,58l-4.6-3.9   c0.3-1.4,0.4-2.9,0.4-4.3c0-1.4-0.1-2.9-0.4-4.3l4.6-3.9c1.5-1.3,2-3.5,1-5.3l-2-3.5c-0.8-1.3-2.1-2-3.6-2c-0.5,0-1,0.1-1.4,0.3   l-5.8,2.1c-2.3-2-4.8-3.4-7.4-4.3l-1-5.9c-0.4-2-2.1-3.1-4.1-3.1h-4c-2,0-3.8,1.1-4.1,3.1l-1,5.8c-2.8,0.9-5.3,2.4-7.5,4.3L29.6,31   c-0.5-0.1-0.9-0.3-1.4-0.3c-1.5,0-2.9,0.8-3.6,2l-2,3.5c-1,1.8-0.6,4,1,5.3l4.6,3.9c-0.3,1.4-0.4,2.9-0.4,4.3   c0,1.5,0.1,2.9,0.4,4.3l-4.6,3.9c-1.5,1.3-2,3.5-1,5.3l2,3.5c0.8,1.3,2.1,2,3.6,2c0.5,0,1-0.1,1.4-0.3l5.8-2.1   c2.3,2,4.8,3.4,7.4,4.3l1,6c0.4,2,2,3.4,4.1,3.4h4c2,0,3.8-1.5,4.1-3.5l1-6c2.9-1,5.5-2.5,7.8-4.6l5.4,2.1c0.5,0.1,1,0.3,1.5,0.3   c1.5,0,2.9-0.8,3.6-2l1.9-3.3C78.4,61.5,77.9,59.3,76.4,58z" />
+                            <Path Fill="White" Data="M50.1,41.3c-4.9,0-8.8,3.9-8.8,8.8s3.9,8.8,8.8,8.8s8.8-3.9,8.8-8.8S55,41.3,50.1,41.3z M76.4,58l-4.6-3.9   c0.3-1.4,0.4-2.9,0.4-4.3c0-1.4-0.1-2.9-0.4-4.3l4.6-3.9c1.5-1.3,2-3.5,1-5.3l-2-3.5c-0.8-1.3-2.1-2-3.6-2c-0.5,0-1,0.1-1.4,0.3   l-5.8,2.1c-2.3-2-4.8-3.4-7.4-4.3l-1-5.9c-0.4-2-2.1-3.1-4.1-3.1h-4c-2,0-3.8,1.1-4.1,3.1l-1,5.8c-2.8,0.9-5.3,2.4-7.5,4.3L29.6,31   c-0.5-0.1-0.9-0.3-1.4-0.3c-1.5,0-2.9,0.8-3.6,2l-2,3.5c-1,1.8-0.6,4,1,5.3l4.6,3.9c-0.3,1.4-0.4,2.9-0.4,4.3   c0,1.5,0.1,2.9,0.4,4.3l-4.6,3.9c-1.5,1.3-2,3.5-1,5.3l2,3.5c0.8,1.3,2.1,2,3.6,2c0.5,0,1-0.1,1.4-0.3l5.8-2.1   c2.3,2,4.8,3.4,7.4,4.3l1,6c0.4,2,2,3.4,4.1,3.4h4c2,0,3.8-1.5,4.1-3.5l1-6c2.9-1,5.5-2.5,7.8-4.6l5.4,2.1c0.5,0.1,1,0.3,1.5,0.3   c1.5,0,2.9-0.8,3.6-2l1.9-3.3C78.4,61.5,77.9,59.3,76.4,58z" />
                         </Canvas>
                     </Viewbox>
 
@@ -190,16 +165,22 @@
 
             <Grid Grid.Row="0">
 
-                <ListView Name="RecentListView">
-                    
+                <ListView Name="RecentListView" ItemsSource="{Binding Path=RecentList}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=FileName}" Width="160">Name</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=DateOfCreation}" Width="160">Date Of Creation</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Extension}" Width="160">Extension</GridViewColumn>
+                        </GridView>
+                    </ListView.View>
                 </ListView>
-                
+
             </Grid>
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
 
                 <Button Style="{DynamicResource WindowButtonStyle}" Command="{Binding Path=ChangeFolder}" Content="Output folder" FontSize="13" Background="#5555" Width="90"/>
-                <TextBlock Width="310" Background="LightGray" Foreground="SlateGray" FontSize="13" Text="{Binding Path=FolderDirectory}" Padding="4"/>
+                <TextBlock Width="390" Background="LightGray" Foreground="SlateGray" FontSize="13" Text="{Binding Path=FolderDirectory}" Padding="4"/>
 
             </StackPanel>
 

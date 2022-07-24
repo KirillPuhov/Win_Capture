@@ -1,6 +1,3 @@
-D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\AppUi.exe.config
-D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\AppUi.exe
-D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\AppUi.pdb
 D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\Domain.dll
 D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\Microsoft.Windows.Shell.dll
 D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\Settings.dll
@@ -16,20 +13,15 @@ D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Controls\Window\WindowControlBox.g.cs
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\MainWindow.g.cs
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\App.g.cs
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
-D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi_MarkupCompile.cache
-D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi_MarkupCompile.lref
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\App.baml
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Controls\Window\TextDialog.baml
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Controls\Window\WindowControlBox.baml
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\MainWindow.baml
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Window\Window.baml
-D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi.g.resources
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi.Properties.Resources.resources
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi.csproj.GenerateResource.cache
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi.csproj.CoreCompileInputs.cache
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi.csproj.CopyComplete
-D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi.exe
-D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi.pdb
 D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\ScreenRecorderLib.dll
 D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\ScreenRecorderLib.xml
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\xaml_icons\app.baml
@@ -40,3 +32,12 @@ D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\xaml_icons\settings.baml
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\xaml_icons\today.baml
 D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\Hardcodet.NotifyIcon.Wpf.dll
 D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\Hardcodet.NotifyIcon.Wpf.xml
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Win capture_MarkupCompile.cache
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Win capture_MarkupCompile.lref
+D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\Win capture.exe.config
+D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\Win capture.exe
+D:\GitHub\Win_Capture\AppUi\bin\x64\Debug\Win capture.pdb
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Win capture.g.resources
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Win capture.exe
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Win capture.pdb
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\xaml_icons\soundwave.baml

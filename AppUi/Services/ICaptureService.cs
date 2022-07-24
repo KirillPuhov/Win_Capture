@@ -1,4 +1,6 @@
-﻿namespace AppUi.Services
+﻿using Domain.Models;
+
+namespace AppUi.Services
 {
     public interface ICaptureService
     {
@@ -11,5 +13,7 @@
         void Pause();
 
         void Resume();
+
+        IOutFile GetOutFile();
     }
 }

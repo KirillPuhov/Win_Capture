@@ -1,5 +1,6 @@
 ﻿using AppUi.Controls.Window;
 using Hardcodet.Wpf.TaskbarNotification;
+using System.Drawing;
 using System.Windows;
 
 namespace AppUi.Window
@@ -60,11 +61,18 @@ namespace AppUi.Window
         }
 
         private TaskbarIcon _taskbar;
-
         public RayeWindow() : base()
         {
             base.Style = (Style)FindResource("RayeWindowStyle");
+            CreateTaskbarIcon();
+        }
+
+        private void CreateTaskbarIcon()
+        {
             _taskbar = new TaskbarIcon();
+            _taskbar.Icon = new Icon("Resources/player-record_64x64.ico");
+            _taskbar.Visibility = Visibility.Visible;
+            _taskbar.TrayLeftMouseDown += TaskbarIcon_TrayLeftMouseDown;
         }
 
         public override void OnApplyTemplate()
@@ -84,9 +92,6 @@ namespace AppUi.Window
 
         private void OnMaximize(object sender, RoutedEventArgs e)
         {
-            _taskbar.Visibility = Visibility.Visible;
-            _taskbar.TrayLeftMouseDown += TaskbarIcon_TrayLeftMouseDown;
-
             if (WindowState == WindowState.Normal)
             {
                 base.Hide();

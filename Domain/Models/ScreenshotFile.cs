@@ -24,7 +24,7 @@ namespace Domain.Models
             DirExist();
         }
 
-        public string FileName => _fileName;
+        public string FileName => _fileName + $"{this.GetHashCode()}";
 
         public double Size => _size;
 
