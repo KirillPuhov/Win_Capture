@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="AppUi.Controls.Window.RecordButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AppUi.Controls.Window"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="50">
+    <Grid Height="25" Width="35" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:RecordButton}}}">
+        <Button Style="{DynamicResource WindowButtonStyle}" Command="{Binding Command}" Background="Transparent" Click="Button_Click">
+            <Grid>
+                <Ellipse x:Name="Ellipse" Fill="#FFC32323" Width="19" Height="19" Visibility="Visible" SnapsToDevicePixels="True"/>
+                <Rectangle x:Name="Rectangle" Fill="#FFC32323" Width="17" Height="17" Visibility="Hidden" SnapsToDevicePixels="True"/>
+            </Grid>
+        </Button>
+    </Grid>
+</UserControl>

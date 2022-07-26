@@ -20,14 +20,14 @@ namespace AppUi.Services
             _timer?.Start();
         }
 
-        public void Pause()
-        {
-            _timer?.Stop();
-        }
-
         public void Resume()
         {
             _timer?.Start();
+        }
+
+        public void Pause()
+        {
+            _timer?.Stop();
         }
 
         public void Stop()

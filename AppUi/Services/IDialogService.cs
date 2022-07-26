@@ -11,5 +11,7 @@
         void ShowError(string error);
 
         void OpenFolder();
+
+        void OpenView(System.Windows.Window window);
     }
 }

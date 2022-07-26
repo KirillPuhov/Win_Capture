@@ -37,8 +37,12 @@ namespace AppUi.Services
 
                 return true;
             }
+            else
+            {
+                Result = _applicationSettings.FolderDirectory;
 
-            return false;
+                return false;
+            }
         }
 
         public void ShowError(string error)
@@ -48,15 +52,21 @@ namespace AppUi.Services
 
         public void ShowInfo(string info)
         {
-            var _info = new TextDialog("Info", info);
-            _info.Owner = _ownerWindow;
-            _info.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            _info.ShowDialog();
+            OpenView(new TextDialog("Info", info));
         }
 
         public void OpenFolder()
         {
-            Process.Start("explorer.exe", _applicationSettings.FolderDirectory + "\\Win_Capture");
+            string path = _applicationSettings.FolderDirectory + "\\Win_Capture";
+            Process.Start("explorer.exe", path);
+        }
+
+        public void OpenView(System.Windows.Window window)
+        {
+            var _view = window;
+            _view.Owner = _ownerWindow;
+            _view.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            _view.ShowDialog();
         }
     }
 }

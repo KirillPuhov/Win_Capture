@@ -106,6 +106,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\Window\PauseButton.xaml.cs">
+      <DependentUpon>PauseButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Window\RecordButton.xaml.cs">
+      <DependentUpon>RecordButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Window\TextDialog.xaml.cs">
       <DependentUpon>TextDialog.xaml</DependentUpon>
     </Compile>
@@ -122,12 +128,24 @@
     <Compile Include="Services\ITimerService.cs" />
     <Compile Include="Services\RecentService.cs" />
     <Compile Include="Services\TimerService.cs" />
+    <Compile Include="View\ConfigurationWindow.xaml.cs">
+      <DependentUpon>ConfigurationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window\Command\RelayCommand.cs" />
     <Compile Include="Window\DI\Container.cs" />
     <Compile Include="Window\DI\IDiContainer.cs" />
     <Compile Include="Window\RayeWindow.cs" />
+    <Compile Include="Window\ViewModel\ConfigurationViewModel.cs" />
     <Compile Include="Window\ViewModel\MainViewModel.cs" />
     <Page Include="Controls\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Window\PauseButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Window\RecordButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,7 +157,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\ConfigurationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -147,7 +169,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -168,6 +190,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="xaml_icons\loop.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="xaml_icons\pausesvgrepocom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="xaml_icons\playbuttonsvgrepocom.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -223,9 +253,6 @@
       <Project>{4c99978a-7597-40b3-8ba2-40c06b10f7f5}</Project>
       <Name>Settings</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Material_1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\player-record_64x64.ico" />

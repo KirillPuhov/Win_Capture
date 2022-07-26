@@ -1,10 +1,10 @@
 ﻿using AppUi.Services;
+using AppUi.View;
 using AppUi.Window.Command;
 using AppUi.Window.DI;
 using Domain.Models;
 using Settings;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -18,10 +18,13 @@ namespace AppUi.Window.ViewModel
 
         private readonly IDialogService  _dialogService;
         private readonly ICaptureService _captureService;
-        private readonly ITimerService   _timerService;
         private readonly IRecentService  _recentService;
 
         private readonly ApplicationSettings _applicationSettings;
+
+
+        private ITimerService _timerService;
+
 
         private string _hours = string.Format("{0:00}", 0);
         public string Hours
@@ -97,7 +100,6 @@ namespace AppUi.Window.ViewModel
 
             _dialogService  = _container.Navigate<IDialogService>("DialogService");
             _captureService = _container.Navigate<ICaptureService>("CaptureService");
-            _timerService   = _container.Navigate<ITimerService>("TimerService");
             _recentService  = _container.Navigate<IRecentService>("RecentService");
 
             _applicationSettings = new ApplicationSettings();
@@ -136,6 +138,7 @@ namespace AppUi.Window.ViewModel
                     {
                         if (!IsRecord)
                         {
+                            _timerService = _container.Navigate<ITimerService>("TimerService");
                             _timerService.Start(Timer_Tick);
 
                             _threadStart = new ThreadStart(()
@@ -151,7 +154,7 @@ namespace AppUi.Window.ViewModel
                             _thread?.Abort();
                             _thread = null;
 
-                            _timerService.Stop();
+                            _timerService.Stop();   
                             ClearTimerMethod();
 
                             var _outFile = _captureService.GetOutFile();
@@ -159,8 +162,6 @@ namespace AppUi.Window.ViewModel
 
                             IsRecord = false;
                         }
-
-                        
                     }));
             }
         }
@@ -190,6 +191,17 @@ namespace AppUi.Window.ViewModel
             Seconds = string.Format("{0:00}", _second);
         }
 
+        private void ClearTimerMethod()
+        {
+            _hour   = 0;
+            _minute = 0;
+            _second = 0;
+
+            Hours = string.Format("{0:00}", 0);
+            Minutes = string.Format("{0:00}", 0);
+            Seconds = string.Format("{0:00}", 0);
+        }
+
         private RelayCommand _pause;
         public RelayCommand Pause
         {
@@ -214,24 +226,17 @@ namespace AppUi.Window.ViewModel
             }
         }
 
-        private RelayCommand _clearTimer;
-        public RelayCommand ClearTimer
+        private RelayCommand _clearRecent;
+        public RelayCommand ClearRecent
         {
             get
             {
-                return _clearTimer ??
-                    (_clearTimer = new RelayCommand(obj =>
+                return _clearRecent ??
+                    (_clearRecent = new RelayCommand(obj =>
                     {
-                        ClearTimerMethod();
+                        _recentService.ClearRecentList();
                     }));
             }
-        }
-
-        private void ClearTimerMethod()
-        {
-            Hours   = string.Format("{0:00}", 0);
-            Minutes = string.Format("{0:00}", 0);
-            Seconds = string.Format("{0:00}", 0);
         }
 
         private RelayCommand _openFolder;
@@ -262,6 +267,19 @@ namespace AppUi.Window.ViewModel
             }
         }
 
+        private RelayCommand _openConfiguration;
+        public RelayCommand OpenConfiguration
+        {
+            get
+            {
+                return _openConfiguration ??
+                    (_openConfiguration = new RelayCommand(obj => 
+                    {
+                        _dialogService.OpenView(new ConfigurationWindow());
+                    }));
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
@@ -273,3 +291,4 @@ namespace AppUi.Window.ViewModel
 
 
 //TODO: исправить завершение без выключения записи
+//TODO: добавить try catch

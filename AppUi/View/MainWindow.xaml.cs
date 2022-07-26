@@ -3,7 +3,7 @@ using AppUi.Window;
 using AppUi.Window.DI;
 using AppUi.Window.ViewModel;
 
-namespace AppUi
+namespace AppUi.View
 {
     public partial class MainWindow : RayeWindow
     {

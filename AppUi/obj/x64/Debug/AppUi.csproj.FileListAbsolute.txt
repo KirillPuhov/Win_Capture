@@ -10,13 +10,11 @@ D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi.csproj.SuggestedBindingRedirects
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Controls\Button.baml
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Controls\Window\TextDialog.g.cs
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Controls\Window\WindowControlBox.g.cs
-D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\MainWindow.g.cs
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\App.g.cs
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\App.baml
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Controls\Window\TextDialog.baml
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Controls\Window\WindowControlBox.baml
-D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\MainWindow.baml
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Window\Window.baml
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi.Properties.Resources.resources
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\AppUi.csproj.GenerateResource.cache
@@ -41,3 +39,13 @@ D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Win capture.g.resources
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Win capture.exe
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Win capture.pdb
 D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\xaml_icons\soundwave.baml
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Controls\Window\RecordButton.g.cs
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Controls\Window\RecordButton.baml
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\xaml_icons\pausesvgrepocom.baml
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\xaml_icons\playbuttonsvgrepocom.baml
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Controls\Window\PauseButton.g.cs
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\Controls\Window\PauseButton.baml
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\View\MainWindow.g.cs
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\View\MainWindow.baml
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\View\ConfigurationWindow.g.cs
+D:\GitHub\Win_Capture\AppUi\obj\x64\Debug\View\ConfigurationWindow.baml
