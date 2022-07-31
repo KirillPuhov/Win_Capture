@@ -165,7 +165,7 @@
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                <Button Style="{DynamicResource WindowButtonStyle}" Command="{Binding Path=ChangeFolder}" Content="Output folder" FontSize="13" Background="#5555" Width="90"/>
+                <TextBlock Text="Output folder" TextAlignment="Center" Padding="4" FontSize="13" Background="#5555" Width="90"/>
                 <TextBlock Width="390" Background="LightGray" Foreground="SlateGray" FontSize="13" Text="{Binding Path=FolderDirectory}" Padding="4"/>
 
             </StackPanel>

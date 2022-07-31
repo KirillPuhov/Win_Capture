@@ -1,4 +1,5 @@
-﻿using AppUi.Window;
+﻿using AppUi.Services;
+using AppUi.Window;
 using AppUi.Window.ViewModel;
 
 namespace AppUi.View
@@ -9,7 +10,7 @@ namespace AppUi.View
         {
             InitializeComponent();
 
-            DataContext = new ConfigurationViewModel();
+            DataContext = new ConfigurationViewModel(new DialogService());
         }
     }
 }

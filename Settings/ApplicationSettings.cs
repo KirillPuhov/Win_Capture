@@ -14,7 +14,6 @@ namespace Settings
             _folderDirectory = _init.ReadINI("Application", "FolderDirectory");
         }
 
-
         public string FolderDirectory
         {
             get { return _folderDirectory; }

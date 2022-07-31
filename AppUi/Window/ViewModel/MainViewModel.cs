@@ -252,21 +252,6 @@ namespace AppUi.Window.ViewModel
             }
         }
 
-
-        private RelayCommand _changeFolder;
-        public RelayCommand ChangeFolder
-        {
-            get
-            {
-                return _changeFolder ??
-                    (_changeFolder = new RelayCommand(obj => 
-                    {
-                        _dialogService.ShowDialog();
-                        FolderDirectory = _dialogService.Result;
-                    }));
-            }
-        }
-
         private RelayCommand _openConfiguration;
         public RelayCommand OpenConfiguration
         {

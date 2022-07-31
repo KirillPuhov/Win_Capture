@@ -6,8 +6,177 @@
         xmlns:local="clr-namespace:AppUi.View"
         mc:Ignorable="d"
         xmlns:window="clr-namespace:AppUi.Window"
-        Title="Configure" Height="460" Width="420" MaximizeBox="False" MinimizeBox="False" ResizeMode="NoResize">
+        Title="Configure" Height="500" Width="420" MaximizeBox="False" MinimizeBox="False" ResizeMode="NoResize">
+    <window:RayeWindow.HeaderContent>
+
+        <Grid>
+            <TextBlock Text="Configure" Margin="10,0,0,0"/>
+        </Grid>
+        
+    </window:RayeWindow.HeaderContent>
+    
     <Grid>
 
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+
+        </Grid.RowDefinitions>
+
+        <GroupBox Grid.Row="0" Header="Recording">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="30" />
+
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="1*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Bitrate" TextAlignment="Center" Margin="16"/>
+                    <ComboBox Grid.Column="1" Margin="5,13,5,13" ItemsSource="{Binding Path=AudioBitrate}" SelectedItem="{Binding Path=AudioBitrateSelected, Mode=TwoWay}"/>
+                </Grid>
+
+                <Grid Grid.Row="1">
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="1*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Channels" TextAlignment="Center" Margin="16"/>
+                    <ComboBox Grid.Column="1" Margin="5,13,5,13" ItemsSource="{Binding Path=AudioChannels}" SelectedItem="{Binding Path=AudioChannelSelected, Mode=TwoWay}"/>
+                    
+                </Grid>
+
+                <Grid Grid.Row="2">
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="1*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="AudioEnabled" TextAlignment="Center" Margin="13" Padding="0,3,0,0"/>
+                    <ComboBox Grid.Column="1" Margin="5,13,5,13" ItemsSource="{Binding Path=IsAudioEnabled}" SelectedItem="{Binding Path=IsAudioEnabledSelected, Mode=TwoWay}"/>
+                    
+                </Grid>
+
+                <Grid Grid.Row="3">
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="1*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Recording FPS" TextAlignment="Center" Margin="12" Padding="0,3,0,0"/>
+                    <TextBox Grid.Column="1" Margin="5,13,5,13" Text="{Binding Path=FPS, Mode=TwoWay}"/>
+                    
+                </Grid>
+
+                <Grid Grid.Row="4">
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="1*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Clicks detect" TextAlignment="Center" Margin="15"/>
+                    <ComboBox Grid.Column="1" Margin="5,13,5,13" ItemsSource="{Binding Path=IsMouseClicksDetected}" SelectedItem="{Binding Path=IsMouseClicksDetectedSelected, Mode=TwoWay}"/>
+                    
+                </Grid>
+
+                <Grid Grid.Row="5">
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="1*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Pointer detect" TextAlignment="Center" Margin="13" Padding="0,2,0,0"/>
+                    <ComboBox Grid.Column="1" Margin="5,13,5,13" ItemsSource="{Binding Path=IsMousePointerEnabled}" SelectedItem="{Binding Path=IsMousePointerEnabledSelected, Mode=TwoWay}"/>
+
+                </Grid>
+
+                <Grid Grid.Row="6" Margin="3" Width="300">
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Configuration:" TextAlignment="Center" Padding="3" Background="#2727"/>
+                    <Button Grid.Column="1" Style="{DynamicResource WindowButtonStyle}" Command="{Binding Path=SaveCommand}" Background="#FF3A8C3A" Foreground="White" FontWeight="Medium" Content="Save"/>
+
+                </Grid>
+
+            </Grid>
+            
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Header="Application">
+
+            <Grid>
+
+                <StackPanel Orientation="Horizontal" Height="23" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <Button Style="{DynamicResource WindowButtonStyle}" Command="{Binding Path=ChangeFolder}" Content="Output folder" FontSize="12" Background="#5555" Width="90"/>
+                    <TextBlock Width="310" Background="LightGray" Foreground="SlateGray" FontSize="12" Text="{Binding Path=FolderDirectory}" Padding="4"/>
+
+                </StackPanel>
+
+            </Grid>
+
+        </GroupBox>
+
+        <GroupBox Grid.Row="2" Header="Other">
+
+            <Grid>
+
+                <Grid Margin="10" Width="300">
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Delete all files:" TextAlignment="Center" Padding="3" Background="#2727"/>
+                    <Button Grid.Column="1" Style="{DynamicResource WindowButtonStyle}" Command="{Binding Path=DeleteCommand}" Background="#FFFB0000" Foreground="White" FontWeight="Medium" Content="Remove"/>
+                    
+                </Grid>
+                
+            </Grid>
+            
+        </GroupBox>
     </Grid>
 </window:RayeWindow>

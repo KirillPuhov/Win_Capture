@@ -45,7 +45,7 @@ namespace Settings
         }
 
 
-        public AudioBitrate Bitrate
+        private AudioBitrate Bitrate
         {
             get { return _bitrate; }
             set
@@ -55,7 +55,7 @@ namespace Settings
             }
         }
 
-        public AudioChannels Chanels
+        private AudioChannels Channels
         {
             get { return _channels; }
             set
@@ -65,7 +65,7 @@ namespace Settings
             }
         }
 
-        public bool IsAudioEnabled
+        private bool IsAudioEnabled
         {
             get { return _isAudioEnabled; }
             set
@@ -75,7 +75,7 @@ namespace Settings
             }
         }
 
-        public int Fps
+        private int Fps
         {
             get { return _fps; }
             set
@@ -86,7 +86,7 @@ namespace Settings
         }
 
         
-        public bool IsMouseClicksDetected
+        private bool IsMouseClicksDetected
         {
             get { return _isMouseClicksDetected; }
             set
@@ -96,7 +96,7 @@ namespace Settings
             }
         }
 
-        public bool IsMousePointerEnabled
+        private bool IsMousePointerEnabled
         {
             get { return _isMousePointerEnabled; }
             set
@@ -106,7 +106,7 @@ namespace Settings
             }
         }
 
-        public string MouseLeftClickDetectionColor
+        private string MouseLeftClickDetectionColor
         {
             get { return _mouseLeftClickDetectionColor; }
             set
@@ -116,7 +116,7 @@ namespace Settings
             }
         }
 
-        public string MouseRightClickDetectionColor
+        private string MouseRightClickDetectionColor
         {
             get { return _mouseRightClickDetectionColor; }
             set
@@ -124,6 +124,41 @@ namespace Settings
                 _mouseRightClickDetectionColor = value;
                 _init.Write("Recorder", "MouseRightClickDetectionColor", _mouseRightClickDetectionColor);
             }
+        }
+
+        public void SetSettings(string bitrate = null, string channels = null, bool isAudioEnabled = false, string fps = null, bool isMouseClicksDetected = false, bool isMousePointerEnabled = false)
+        {
+            if (bitrate != null)
+            {
+                Enum.TryParse(bitrate, out AudioBitrate _bitrate);
+                Bitrate = _bitrate;
+            }
+
+            if (channels != null)
+            {
+                Enum.TryParse(channels, out AudioChannels _channels);
+                Channels = _channels;
+            }
+
+            int.TryParse(fps, out _fps);
+            Fps = _fps;
+
+            IsAudioEnabled        = isAudioEnabled;
+            IsMouseClicksDetected = isMouseClicksDetected;
+            IsMousePointerEnabled = isMousePointerEnabled;
+        }
+
+        public string[] GetSettings()
+        {
+            string[] settings = new string[6];
+            settings.SetValue(_init.ReadINI("Recorder", "Bitrate"), 0);
+            settings.SetValue(_init.ReadINI("Recorder", "Channels"), 1);
+            settings.SetValue(_init.ReadINI("Recorder", "IsAudioEnabled"), 2);
+            settings.SetValue(_init.ReadINI("Recorder", "Fps"), 3);
+            settings.SetValue(_init.ReadINI("Recorder", "IsMouseClicksDetected"), 4);
+            settings.SetValue(_init.ReadINI("Recorder", "IsMousePointerEnabled"), 5);
+
+            return settings;
         }
 
         public RecorderOptions GetOptions()
