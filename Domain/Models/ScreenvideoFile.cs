@@ -59,7 +59,7 @@ namespace Domain.Models
         {
             DirExist();
 
-            string _videoPath = System.IO.Path.Combine(Path + "\\Win_Capture\\Video", FileName + $"{this.GetHashCode()}" + Extension);
+            string _videoPath = System.IO.Path.Combine(Path + "\\Win_Capture\\Video", FileName + Extension);
             var _settings     = new RecorderSettings();
 
             _recorderLogger   = new RecorderLogger(new RecorderService(_settings, _videoPath));

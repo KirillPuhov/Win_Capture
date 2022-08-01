@@ -92,6 +92,17 @@ namespace AppUi.Window.ViewModel
 
         public ObservableCollection<IOutFile> RecentList { get; set; }
 
+        private IOutFile _selectedOutFile;
+        public IOutFile SelectedOutFile
+        {
+            get { return _selectedOutFile; }
+            set
+            {
+                _selectedOutFile = value;
+                OnPropertyChanged("SelectedOutFile");
+            }
+        }
+
         #region ctor
 
         public MainViewModel(IDiContainer container)
@@ -197,7 +208,7 @@ namespace AppUi.Window.ViewModel
             _minute = 0;
             _second = 0;
 
-            Hours = string.Format("{0:00}", 0);
+            Hours   = string.Format("{0:00}", 0);
             Minutes = string.Format("{0:00}", 0);
             Seconds = string.Format("{0:00}", 0);
         }
@@ -235,6 +246,34 @@ namespace AppUi.Window.ViewModel
                     (_clearRecent = new RelayCommand(obj =>
                     {
                         _recentService.ClearRecentList();
+                    }));
+            }
+        }
+
+        private RelayCommand _removeRecent;
+        public RelayCommand RemoveRecent
+        {
+            get
+            {
+                return _removeRecent ??
+                    (_removeRecent = new RelayCommand(obj => 
+                    {
+                        IOutFile _file = obj as IOutFile;
+                        _recentService.RemoveRecentFile(_file);
+                    }));
+            }
+        }
+
+        private RelayCommand _openRecent;
+        public RelayCommand OpenRecent
+        {
+            get
+            {
+                return _openRecent ??
+                    (_openRecent = new RelayCommand(obj => 
+                    {
+                        IOutFile _file = obj as IOutFile;
+                        _dialogService.OpenFile(_file);
                     }));
             }
         }

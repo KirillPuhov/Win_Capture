@@ -146,24 +146,43 @@
 
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
 
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
 
-                <ListView Name="RecentListView" ItemsSource="{Binding Path=RecentList}">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=FileName}" Width="160">Name</GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=DateOfCreation}" Width="160">Date Of Creation</GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=Extension}" Width="160">Extension</GridViewColumn>
-                        </GridView>
-                    </ListView.View>
+                <ListView x:Name="RecentListView" ItemsSource="{Binding Path=RecentList}" SelectedItem="{Binding Path=SelectedOutFile}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+
+                                <Grid>
+
+                                    <Grid.ColumnDefinitions>
+
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="100"/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Text="{Binding Path=DateOfCreation}"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding Path=FileName}"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding Path=Extension}"/>
+
+                                </Grid>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
                 </ListView>
 
             </Grid>
 
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Grid.Row="1" Style="{DynamicResource WindowButtonStyle}" Command="{Binding Path=OpenRecent}" CommandParameter="{Binding Path=SelectedOutFile}" Background="#FF3A8C3A" Foreground="White" FontWeight="Medium" Content="Open"/>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
 
                 <TextBlock Text="Output folder" TextAlignment="Center" Padding="4" FontSize="13" Background="#5555" Width="90"/>
                 <TextBlock Width="390" Background="LightGray" Foreground="SlateGray" FontSize="13" Text="{Binding Path=FolderDirectory}" Padding="4"/>

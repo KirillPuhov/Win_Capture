@@ -45,7 +45,7 @@ namespace Domain.Models
 
                 _size = _bitmap.Size.Width * _bitmap.Size.Height;
 
-                _bitmap.Save(Path + "\\Win_Capture\\Screenshots\\" + FileName + $"{this.GetHashCode()}" + Extension, ImageFormat.Png);
+                _bitmap.Save(Path + "\\Win_Capture\\Screenshots\\" + FileName + Extension, ImageFormat.Png);
             }
         }
 

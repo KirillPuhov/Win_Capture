@@ -1,4 +1,6 @@
-﻿namespace AppUi.Services
+﻿using Domain.Models;
+
+namespace AppUi.Services
 {
     public interface IDialogService
     {
@@ -13,5 +15,7 @@
         void OpenFolder();
 
         void OpenView(System.Windows.Window window);
+
+        void OpenFile(IOutFile file);
     }
 }

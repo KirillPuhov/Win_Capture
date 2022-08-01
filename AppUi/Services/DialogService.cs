@@ -1,4 +1,5 @@
 ﻿using AppUi.Controls.Window;
+using Domain.Models;
 using Settings;
 using System.Diagnostics;
 using System.Windows;
@@ -67,6 +68,21 @@ namespace AppUi.Services
             _view.Owner = _ownerWindow;
             _view.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             _view.ShowDialog();
+        }
+
+        public void OpenFile(IOutFile file)
+        {
+            string _path = null;
+            if (file.Extension.Equals(".png"))
+            {
+                _path = file.Path + "\\Win_Capture\\Screenshots\\" + file.FileName + file.Extension;
+            }
+            else
+            {
+                _path = file.Path + "\\Win_Capture\\Video\\" + file.FileName + file.Extension;
+            }
+
+            Process.Start(_path);
         }
     }
 }
