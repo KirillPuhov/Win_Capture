@@ -128,10 +128,17 @@ namespace AppUi.Window.ViewModel
                 return _screenshot ??
                     (_screenshot = new RelayCommand(obj => 
                     {
-                        _captureService.HideWindowAndStart(CaptureType.Screenshot, "screenshot", FolderDirectory);
+                        try
+                        {
+                            _captureService.HideWindowAndStart(type: CaptureType.Screenshot, path: FolderDirectory);
 
-                        var _outFile = _captureService.GetOutFile();
-                        _recentService.AddRecentFile(_outFile);
+                            var _outFile = _captureService.GetOutFile();
+                            _recentService.AddRecentFile(_outFile);
+                        }
+                        catch (Exception _ex)
+                        {
+                            _dialogService.ShowError(_ex.Message);
+                        }
                     }));
             }
         }
@@ -147,31 +154,38 @@ namespace AppUi.Window.ViewModel
                 return _startRecord ??
                     (_startRecord = new RelayCommand(obj => 
                     {
-                        if (!IsRecord)
+                        try
                         {
-                            _timerService = _container.Navigate<ITimerService>("TimerService");
-                            _timerService.Start(Timer_Tick);
+                            if (!IsRecord)
+                            {
+                                _timerService = _container.Navigate<ITimerService>("TimerService");
+                                _timerService.Start(Timer_Tick);
 
-                            _threadStart = new ThreadStart(()
-                                => { _captureService.Start(CaptureType.Screenvideo, "video", FolderDirectory); });
+                                _threadStart = new ThreadStart(()
+                                    => { _captureService.Start(type: CaptureType.Screenvideo, path: FolderDirectory); });
 
-                            _thread = new Thread(_threadStart, 100);
-                            _thread.Start();
-                            IsRecord = true;
+                                _thread = new Thread(_threadStart, 100);
+                                _thread.Start();
+                                IsRecord = true;
+                            }
+                            else
+                            {
+                                _captureService.Stop();
+                                _thread?.Abort();
+                                _thread = null;
+
+                                _timerService.Stop();
+                                ClearTimerMethod();
+
+                                var _outFile = _captureService.GetOutFile();
+                                _recentService.AddRecentFile(_outFile);
+
+                                IsRecord = false;
+                            }
                         }
-                        else
+                        catch(Exception _ex)
                         {
-                            _captureService.Stop();
-                            _thread?.Abort();
-                            _thread = null;
-
-                            _timerService.Stop();   
-                            ClearTimerMethod();
-
-                            var _outFile = _captureService.GetOutFile();
-                            _recentService.AddRecentFile(_outFile);
-
-                            IsRecord = false;
+                            _dialogService.ShowError(_ex.Message);
                         }
                     }));
             }
@@ -272,8 +286,15 @@ namespace AppUi.Window.ViewModel
                 return _openRecent ??
                     (_openRecent = new RelayCommand(obj => 
                     {
-                        IOutFile _file = obj as IOutFile;
-                        _dialogService.OpenFile(_file);
+                        try
+                        {
+                            IOutFile _file = obj as IOutFile;
+                            _dialogService.OpenFile(_file);
+                        }
+                        catch (Exception _ex)
+                        {
+                            _dialogService.ShowError(_ex.Message);
+                        }
                     }));
             }
         }
@@ -286,7 +307,14 @@ namespace AppUi.Window.ViewModel
                 return _openFolder ??
                     (_openFolder = new RelayCommand(obj => 
                     {
-                        _dialogService.OpenFolder();
+                        try
+                        {
+                            _dialogService.OpenFolder();
+                        }
+                        catch (Exception _ex)
+                        {
+                            _dialogService.ShowError(_ex.Message);
+                        }
                     }));
             }
         }
@@ -315,4 +343,3 @@ namespace AppUi.Window.ViewModel
 
 
 //TODO: исправить завершение без выключения записи
-//TODO: добавить try catch

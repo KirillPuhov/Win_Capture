@@ -7,6 +7,8 @@ namespace Domain.Models
 {
     public sealed class ScreenvideoFile : IOutFile
     {
+        private const string APP_FOLDERS = @"\Win_Capture\Video\"; 
+
         private readonly string _fileName;
         private readonly DateTime _dateOfCreation;
         private readonly string _extension = ".mp4";
@@ -22,7 +24,7 @@ namespace Domain.Models
             _dateOfCreation = dateOfCreation;
             _path           = path;
 
-            InitDefaultSettings();
+            InitSettings();
         }
 
         public string FileName         => _fileName + $"{this.GetHashCode()}";
@@ -55,11 +57,11 @@ namespace Domain.Models
             _recorderLogger.EndRecording();
         }
 
-        private void InitDefaultSettings()
+        private void InitSettings()
         {
             DirExist();
 
-            string _videoPath = System.IO.Path.Combine(Path + "\\Win_Capture\\Video", FileName + Extension);
+            string _videoPath = System.IO.Path.Combine(Path + APP_FOLDERS, FileName + Extension);
             var _settings     = new RecorderSettings();
 
             _recorderLogger   = new RecorderLogger(new RecorderService(_settings, _videoPath));
@@ -67,8 +69,8 @@ namespace Domain.Models
 
         private void DirExist()
         {
-            if (!Directory.Exists(Path + "\\Win_Capture\\Video"))
-                Directory.CreateDirectory(Path + "\\Win_Capture\\Video");
+            if (!Directory.Exists(Path + APP_FOLDERS))
+                Directory.CreateDirectory(Path + APP_FOLDERS);
         }
 
         public override int GetHashCode()
@@ -118,7 +120,7 @@ namespace Domain.Models
 
         public override string ToString()
         {
-            return String.Format("(Name: {0}, Type:{1}, Size: {2}, Date of creation: {3}, Path: {4})", FileName, Extension, Size, DateOfCreation, Path);
+            return string.Format("(Name: {0}, Type:{1}, Size: {2}, Date of creation: {3}, Path: {4})", FileName, Extension, Size, DateOfCreation, Path);
         }
     }
 }

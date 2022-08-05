@@ -6,6 +6,9 @@ namespace Domain.Factories
 {
     public sealed class ScreenvideoFactory : OutFileFactory
     {
+        private readonly string FILENAME = "video";
+        private readonly string FILE_PATH = Environment.GetEnvironmentVariable("userprofile") + @"\Documents";
+
         private readonly IOutFile _output;
 
         private readonly string _fileName;
@@ -13,10 +16,16 @@ namespace Domain.Factories
 
         public ScreenvideoFactory(string fileName, string path)
         {
-            //TODO: Проверка fileName и path
+            if (string.IsNullOrWhiteSpace(fileName))
+                _fileName = FILENAME;
+            else
+                _fileName = fileName;
 
-            _fileName = fileName;
-            _path = path;
+
+            if (string.IsNullOrWhiteSpace(path))
+                _path = FILE_PATH;
+            else
+                _path = path;
 
             _output = new ScreenvideoFile(_fileName, DateTime.Now, _path);
         }

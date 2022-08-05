@@ -12,13 +12,13 @@ namespace AppUi.Services
         public CaptureService() =>
             _helper = new HelperService();
 
-        public void Start(CaptureType type, string fileName, string path)
+        public void Start(CaptureType type, string fileName = null, string path = null)
         {
             _output = GetFactory(type, fileName, path).GetOutFile();
             _output.doAction();
         }
 
-        public void HideWindowAndStart(CaptureType type, string fileName, string path)
+        public void HideWindowAndStart(CaptureType type, string fileName = null, string path = null)
         {
             _helper.WindowHide();
 

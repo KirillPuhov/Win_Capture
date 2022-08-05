@@ -8,6 +8,8 @@ namespace Domain.Models
 {
     public sealed class ScreenshotFile : IOutFile
     {
+        private const string APP_FOLDERS = @"\Win_Capture\Screenshots\";
+
         private readonly string _fileName;
         private readonly DateTime _dateOfCreation;
         private readonly string _extension = ".png";
@@ -45,14 +47,14 @@ namespace Domain.Models
 
                 _size = _bitmap.Size.Width * _bitmap.Size.Height;
 
-                _bitmap.Save(Path + "\\Win_Capture\\Screenshots\\" + FileName + Extension, ImageFormat.Png);
+                _bitmap.Save(Path + APP_FOLDERS + FileName + Extension, ImageFormat.Png);
             }
         }
 
         private void DirExist()
         {
-            if (!Directory.Exists(Path + "\\Win_Capture\\Screenshots"))
-                Directory.CreateDirectory(Path + "\\Win_Capture\\Screenshots");
+            if (!Directory.Exists(Path + APP_FOLDERS))
+                Directory.CreateDirectory(Path + APP_FOLDERS);
         }
 
         public void stopAction() { }
@@ -108,7 +110,7 @@ namespace Domain.Models
 
         public override string ToString()
         {
-            return String.Format("(Name: {0}, Type:{1}, Size: {2}, Date of creation: {3}, Path: {4})", FileName, Extension, Size, DateOfCreation, Path);
+            return string.Format("(Name: {0}, Type:{1}, Size: {2}, Date of creation: {3}, Path: {4})", FileName, Extension, Size, DateOfCreation, Path);
         }
     }
 }

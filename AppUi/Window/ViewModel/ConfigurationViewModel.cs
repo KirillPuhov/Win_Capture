@@ -1,6 +1,7 @@
 ﻿using AppUi.Services;
 using AppUi.Window.Command;
 using Settings;
+using System;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -191,9 +192,16 @@ namespace AppUi.Window.ViewModel
                 return _changeFolder ??
                     (_changeFolder = new RelayCommand(obj =>
                     {
-                        _dialogService.ShowDialog();
-                        FolderDirectory = _dialogService.Result;
-                        _applicationSettings.FolderDirectory = FolderDirectory;
+                        try
+                        {
+                            _dialogService.ShowDialog();
+                            FolderDirectory = _dialogService.Result;
+                            _applicationSettings.FolderDirectory = FolderDirectory;
+                        }
+                        catch (Exception _ex)
+                        {
+                            _dialogService.ShowError(_ex.Message);
+                        }
                     }));
             }
         }
@@ -206,8 +214,15 @@ namespace AppUi.Window.ViewModel
                 return _saveCommand ??
                     (_saveCommand = new RelayCommand(obj => 
                     {
-                        _recorderSettings.SetSettings(AudioBitrateSelected, AudioChannelSelected, IsAudioEnabledSelected, FPS, IsMouseClicksDetectedSelected, IsMousePointerEnabledSelected);
-                        _dialogService.ShowInfo("Сonfiguration saved");
+                        try
+                        {
+                            _recorderSettings.SetSettings(AudioBitrateSelected, AudioChannelSelected, IsAudioEnabledSelected, FPS, IsMouseClicksDetectedSelected, IsMousePointerEnabledSelected);
+                            _dialogService.ShowInfo("Сonfiguration saved");
+                        }
+                        catch (Exception _ex)
+                        {
+                            _dialogService.ShowError(_ex.Message);
+                        }
                     }));
             }
         }
@@ -220,10 +235,17 @@ namespace AppUi.Window.ViewModel
                 return _deleteCommand ??
                     (_deleteCommand = new RelayCommand(obj => 
                     {
-                        DeleteFiles(FolderDirectory + "\\Win_Capture\\Video");
-                        DeleteFiles(FolderDirectory + "\\Win_Capture\\Screenshots");
+                        try
+                        {
+                            DeleteFiles(FolderDirectory + "\\Win_Capture\\Video");
+                            DeleteFiles(FolderDirectory + "\\Win_Capture\\Screenshots");
 
-                        _dialogService.ShowInfo("All files have been deleted");
+                            _dialogService.ShowInfo("All files have been deleted");
+                        }
+                        catch (Exception _ex)
+                        {
+                            _dialogService.ShowError(_ex.Message);
+                        }
                     }));
             }
         }
