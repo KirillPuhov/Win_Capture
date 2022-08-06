@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace AppUi
 {
@@ -7,5 +8,9 @@ namespace AppUi
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            Environment.SetEnvironmentVariable("IsRecord", "False");
+        }
     }
 }

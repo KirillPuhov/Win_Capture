@@ -1,0 +1,12 @@
+D:\GitHub\Win_Capture\Domain\bin\x64\Release\Domain.dll.config
+D:\GitHub\Win_Capture\Domain\bin\x64\Release\Domain.dll
+D:\GitHub\Win_Capture\Domain\bin\x64\Release\Domain.pdb
+D:\GitHub\Win_Capture\Domain\bin\x64\Release\ScreenRecorderLib.dll
+D:\GitHub\Win_Capture\Domain\bin\x64\Release\Settings.dll
+D:\GitHub\Win_Capture\Domain\bin\x64\Release\Settings.pdb
+D:\GitHub\Win_Capture\Domain\bin\x64\Release\ScreenRecorderLib.xml
+D:\GitHub\Win_Capture\Domain\obj\x64\Release\Domain.csproj.AssemblyReference.cache
+D:\GitHub\Win_Capture\Domain\obj\x64\Release\Domain.csproj.CoreCompileInputs.cache
+D:\GitHub\Win_Capture\Domain\obj\x64\Release\Domain.csproj.CopyComplete
+D:\GitHub\Win_Capture\Domain\obj\x64\Release\Domain.dll
+D:\GitHub\Win_Capture\Domain\obj\x64\Release\Domain.pdb

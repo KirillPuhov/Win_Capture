@@ -1,0 +1,51 @@
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\Win capture.exe.config
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\Win capture.exe
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\Win capture.pdb
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\Domain.dll
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\Hardcodet.NotifyIcon.Wpf.dll
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\Microsoft.Windows.Shell.dll
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\Settings.dll
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\ScreenRecorderLib.dll
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\Domain.pdb
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\Domain.dll.config
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\Settings.pdb
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\Hardcodet.NotifyIcon.Wpf.xml
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\Microsoft.Windows.Shell.pdb
+D:\GitHub\Win_Capture\AppUi\bin\x86\Release\ScreenRecorderLib.xml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\AppUi.csproj.AssemblyReference.cache
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\AppUi.csproj.SuggestedBindingRedirects.cache
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Controls\Button.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\xaml_icons\app.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\xaml_icons\cursor.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\xaml_icons\folder.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\xaml_icons\loop.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\xaml_icons\pausesvgrepocom.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\xaml_icons\playbuttonsvgrepocom.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\xaml_icons\settings.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\xaml_icons\soundwave.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\xaml_icons\today.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Controls\Window\PauseButton.g.cs
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Controls\Window\RecordButton.g.cs
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Controls\Window\TextDialog.g.cs
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Controls\Window\WindowControlBox.g.cs
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\View\ConfigurationWindow.g.cs
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\View\MainWindow.g.cs
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\App.g.cs
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Win capture_MarkupCompile.cache
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Win capture_MarkupCompile.lref
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\App.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Controls\Window\PauseButton.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Controls\Window\RecordButton.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Controls\Window\TextDialog.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Controls\Window\WindowControlBox.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\View\ConfigurationWindow.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\View\MainWindow.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Window\Window.baml
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Win capture.g.resources
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\AppUi.Properties.Resources.resources
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\AppUi.csproj.GenerateResource.cache
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\AppUi.csproj.CoreCompileInputs.cache
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\AppUi.csproj.CopyComplete
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Win capture.exe
+D:\GitHub\Win_Capture\AppUi\obj\x86\Release\Win capture.pdb

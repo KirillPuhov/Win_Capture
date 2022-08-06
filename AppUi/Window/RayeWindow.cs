@@ -120,7 +120,6 @@ namespace AppUi.Window
                 else
                 {
                     base.Close();
-                    Environment.SetEnvironmentVariable("IsRecord", null);
                 }
 
             }
