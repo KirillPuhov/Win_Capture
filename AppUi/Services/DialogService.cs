@@ -25,7 +25,7 @@ namespace AppUi.Services
 
         public DialogService()
         {
-            _ownerWindow = Application.Current.MainWindow.Owner;
+            _ownerWindow = Application.Current.MainWindow;
             _applicationSettings = new ApplicationSettings();
         }
 

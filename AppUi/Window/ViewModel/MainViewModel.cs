@@ -167,6 +167,7 @@ namespace AppUi.Window.ViewModel
                                 _thread = new Thread(_threadStart, 100);
                                 _thread.Start();
                                 IsRecord = true;
+                                Environment.SetEnvironmentVariable("IsRecord", "True");
                             }
                             else
                             {
@@ -181,6 +182,7 @@ namespace AppUi.Window.ViewModel
                                 _recentService.AddRecentFile(_outFile);
 
                                 IsRecord = false;
+                                Environment.SetEnvironmentVariable("IsRecord", "False");
                             }
                         }
                         catch(Exception _ex)
@@ -340,6 +342,3 @@ namespace AppUi.Window.ViewModel
         }
     }
 }
-
-
-//TODO: исправить завершение без выключения записи

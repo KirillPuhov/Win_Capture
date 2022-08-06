@@ -1,5 +1,7 @@
 ﻿using AppUi.Controls.Window;
+using AppUi.Services;
 using Hardcodet.Wpf.TaskbarNotification;
+using System;
 using System.Drawing;
 using System.Windows;
 
@@ -7,6 +9,8 @@ namespace AppUi.Window
 {
     public class RayeWindow : System.Windows.Window
     {
+        private readonly IDialogService _dialogService = new DialogService();
+
         public static readonly DependencyProperty HeaderIconProperty = DependencyProperty.Register("HeaderIcon", typeof(UIElement), typeof(RayeWindow));
         public UIElement HeaderIcon
         {
@@ -105,7 +109,21 @@ namespace AppUi.Window
 
         private void OnClose(object sender, RoutedEventArgs e)
         {
-            base.Close();
+            if (Environment.GetEnvironmentVariable("IsRecord").Equals("True") ||
+                Environment.GetEnvironmentVariable("IsRecord").Equals("False"))
+            {
+
+                if (Environment.GetEnvironmentVariable("IsRecord").Equals("True"))
+                {
+                    _dialogService.ShowError("A Recording is in progress!");
+                }
+                else
+                {
+                    base.Close();
+                    Environment.SetEnvironmentVariable("IsRecord", null);
+                }
+
+            }
         }
     }
 }
