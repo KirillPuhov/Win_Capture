@@ -49,3 +49,54 @@ D:\GitHub\Win_Capture\AppUi\obj\x64\Release\AppUi.csproj.CoreCompileInputs.cache
 D:\GitHub\Win_Capture\AppUi\obj\x64\Release\AppUi.csproj.CopyComplete
 D:\GitHub\Win_Capture\AppUi\obj\x64\Release\Win capture.exe
 D:\GitHub\Win_Capture\AppUi\obj\x64\Release\Win capture.pdb
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\Win capture.exe.config
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\Win capture.exe
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\Win capture.pdb
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\Domain.dll
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\Hardcodet.NotifyIcon.Wpf.dll
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\Microsoft.Windows.Shell.dll
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\Settings.dll
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\ScreenRecorderLib.dll
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\Domain.pdb
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\Domain.dll.config
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\Settings.pdb
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\Hardcodet.NotifyIcon.Wpf.xml
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\Microsoft.Windows.Shell.pdb
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x64\Release\ScreenRecorderLib.xml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\AppUi.csproj.AssemblyReference.cache
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\AppUi.csproj.SuggestedBindingRedirects.cache
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Controls\Button.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\xaml_icons\app.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\xaml_icons\cursor.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\xaml_icons\folder.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\xaml_icons\loop.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\xaml_icons\pausesvgrepocom.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\xaml_icons\playbuttonsvgrepocom.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\xaml_icons\settings.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\xaml_icons\soundwave.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\xaml_icons\today.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Controls\Window\PauseButton.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Controls\Window\RecordButton.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Controls\Window\TextDialog.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Controls\Window\WindowControlBox.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\View\ConfigurationWindow.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\View\MainWindow.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\App.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\GeneratedInternalTypeHelper.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Win capture_MarkupCompile.cache
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Win capture_MarkupCompile.lref
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\App.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Controls\Window\PauseButton.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Controls\Window\RecordButton.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Controls\Window\TextDialog.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Controls\Window\WindowControlBox.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\View\ConfigurationWindow.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\View\MainWindow.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Window\Window.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Win capture.g.resources
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\AppUi.Properties.Resources.resources
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\AppUi.csproj.GenerateResource.cache
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\AppUi.csproj.CoreCompileInputs.cache
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\AppUi.csproj.CopyComplete
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Win capture.exe
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x64\Release\Win capture.pdb

@@ -4,3 +4,12 @@ D:\GitHub\Win_Capture\Settings\obj\x86\Debug\Settings.csproj.AssemblyReference.c
 D:\GitHub\Win_Capture\Settings\obj\x86\Debug\Settings.csproj.CoreCompileInputs.cache
 D:\GitHub\Win_Capture\Settings\obj\x86\Debug\Settings.dll
 D:\GitHub\Win_Capture\Settings\obj\x86\Debug\Settings.pdb
+D:\Projects\CSharp\Win_Capture\Settings\bin\x86\Debug\Settings.dll
+D:\Projects\CSharp\Win_Capture\Settings\bin\x86\Debug\Settings.pdb
+D:\Projects\CSharp\Win_Capture\Settings\bin\x86\Debug\ScreenRecorderLib.dll
+D:\Projects\CSharp\Win_Capture\Settings\bin\x86\Debug\ScreenRecorderLib.xml
+D:\Projects\CSharp\Win_Capture\Settings\obj\x86\Debug\Settings.csproj.AssemblyReference.cache
+D:\Projects\CSharp\Win_Capture\Settings\obj\x86\Debug\Settings.csproj.CoreCompileInputs.cache
+D:\Projects\CSharp\Win_Capture\Settings\obj\x86\Debug\Settings.csproj.CopyComplete
+D:\Projects\CSharp\Win_Capture\Settings\obj\x86\Debug\Settings.dll
+D:\Projects\CSharp\Win_Capture\Settings\obj\x86\Debug\Settings.pdb

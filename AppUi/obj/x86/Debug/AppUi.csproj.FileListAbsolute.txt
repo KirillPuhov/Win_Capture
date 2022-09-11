@@ -32,3 +32,54 @@ D:\GitHub\Win_Capture\AppUi\obj\x86\Debug\AppUi.csproj.CoreCompileInputs.cache
 D:\GitHub\Win_Capture\AppUi\obj\x86\Debug\AppUi.csproj.CopyComplete
 D:\GitHub\Win_Capture\AppUi\obj\x86\Debug\AppUi.exe
 D:\GitHub\Win_Capture\AppUi\obj\x86\Debug\AppUi.pdb
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\Win capture.exe.config
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\Win capture.exe
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\Win capture.pdb
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\Domain.dll
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\Hardcodet.NotifyIcon.Wpf.dll
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\Microsoft.Windows.Shell.dll
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\Settings.dll
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\ScreenRecorderLib.dll
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\Domain.pdb
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\Domain.dll.config
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\Settings.pdb
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\Hardcodet.NotifyIcon.Wpf.xml
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\Microsoft.Windows.Shell.pdb
+D:\Projects\CSharp\Win_Capture\AppUi\bin\x86\Debug\ScreenRecorderLib.xml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\AppUi.csproj.AssemblyReference.cache
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\AppUi.csproj.SuggestedBindingRedirects.cache
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Controls\Button.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\xaml_icons\app.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\xaml_icons\cursor.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\xaml_icons\folder.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\xaml_icons\loop.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\xaml_icons\pausesvgrepocom.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\xaml_icons\playbuttonsvgrepocom.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\xaml_icons\settings.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\xaml_icons\soundwave.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\xaml_icons\today.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Controls\Window\PauseButton.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Controls\Window\RecordButton.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Controls\Window\TextDialog.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Controls\Window\WindowControlBox.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\View\ConfigurationWindow.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\View\MainWindow.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\App.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Win capture_MarkupCompile.cache
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Win capture_MarkupCompile.lref
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\App.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Controls\Window\PauseButton.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Controls\Window\RecordButton.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Controls\Window\TextDialog.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Controls\Window\WindowControlBox.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\View\ConfigurationWindow.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\View\MainWindow.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Window\Window.baml
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Win capture.g.resources
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\AppUi.Properties.Resources.resources
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\AppUi.csproj.GenerateResource.cache
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\AppUi.csproj.CoreCompileInputs.cache
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\AppUi.csproj.CopyComplete
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Win capture.exe
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Debug\Win capture.pdb

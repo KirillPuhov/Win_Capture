@@ -10,6 +10,7 @@ namespace AppUi.View
         public MainWindow()
         {
             InitializeComponent();
+            CreateTaskbarIcon();
 
             var _container = new Container();
             _container.Register<IDialogService, DialogService>(new DialogService(), "DialogService");

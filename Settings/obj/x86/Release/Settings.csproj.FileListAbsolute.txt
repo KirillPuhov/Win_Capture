@@ -7,3 +7,12 @@ D:\GitHub\Win_Capture\Settings\obj\x86\Release\Settings.csproj.CoreCompileInputs
 D:\GitHub\Win_Capture\Settings\obj\x86\Release\Settings.csproj.CopyComplete
 D:\GitHub\Win_Capture\Settings\obj\x86\Release\Settings.dll
 D:\GitHub\Win_Capture\Settings\obj\x86\Release\Settings.pdb
+D:\Projects\CSharp\Win_Capture\Settings\bin\x86\Release\Settings.dll
+D:\Projects\CSharp\Win_Capture\Settings\bin\x86\Release\Settings.pdb
+D:\Projects\CSharp\Win_Capture\Settings\bin\x86\Release\ScreenRecorderLib.dll
+D:\Projects\CSharp\Win_Capture\Settings\bin\x86\Release\ScreenRecorderLib.xml
+D:\Projects\CSharp\Win_Capture\Settings\obj\x86\Release\Settings.csproj.AssemblyReference.cache
+D:\Projects\CSharp\Win_Capture\Settings\obj\x86\Release\Settings.csproj.CoreCompileInputs.cache
+D:\Projects\CSharp\Win_Capture\Settings\obj\x86\Release\Settings.csproj.CopyComplete
+D:\Projects\CSharp\Win_Capture\Settings\obj\x86\Release\Settings.dll
+D:\Projects\CSharp\Win_Capture\Settings\obj\x86\Release\Settings.pdb

@@ -68,10 +68,9 @@ namespace AppUi.Window
         public RayeWindow() : base()
         {
             base.Style = (Style)FindResource("RayeWindowStyle");
-            CreateTaskbarIcon();
         }
 
-        private void CreateTaskbarIcon()
+        protected void CreateTaskbarIcon()
         {
             _taskbar = new TaskbarIcon();
             _taskbar.Icon = new Icon("Resources/player-record_64x64.ico");

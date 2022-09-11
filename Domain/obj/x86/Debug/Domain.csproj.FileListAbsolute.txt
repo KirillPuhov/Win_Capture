@@ -8,3 +8,15 @@ D:\GitHub\Win_Capture\Domain\obj\x86\Debug\Domain.csproj.CoreCompileInputs.cache
 D:\GitHub\Win_Capture\Domain\obj\x86\Debug\Domain.csproj.CopyComplete
 D:\GitHub\Win_Capture\Domain\obj\x86\Debug\Domain.dll
 D:\GitHub\Win_Capture\Domain\obj\x86\Debug\Domain.pdb
+D:\Projects\CSharp\Win_Capture\Domain\bin\x86\Debug\Domain.dll.config
+D:\Projects\CSharp\Win_Capture\Domain\bin\x86\Debug\Domain.dll
+D:\Projects\CSharp\Win_Capture\Domain\bin\x86\Debug\Domain.pdb
+D:\Projects\CSharp\Win_Capture\Domain\bin\x86\Debug\ScreenRecorderLib.dll
+D:\Projects\CSharp\Win_Capture\Domain\bin\x86\Debug\Settings.dll
+D:\Projects\CSharp\Win_Capture\Domain\bin\x86\Debug\Settings.pdb
+D:\Projects\CSharp\Win_Capture\Domain\bin\x86\Debug\ScreenRecorderLib.xml
+D:\Projects\CSharp\Win_Capture\Domain\obj\x86\Debug\Domain.csproj.AssemblyReference.cache
+D:\Projects\CSharp\Win_Capture\Domain\obj\x86\Debug\Domain.csproj.CoreCompileInputs.cache
+D:\Projects\CSharp\Win_Capture\Domain\obj\x86\Debug\Domain.csproj.CopyComplete
+D:\Projects\CSharp\Win_Capture\Domain\obj\x86\Debug\Domain.dll
+D:\Projects\CSharp\Win_Capture\Domain\obj\x86\Debug\Domain.pdb

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\GitHub\Win_Capture\AppUi\obj\x86\Release\
+D:\Projects\CSharp\Win_Capture\AppUi\obj\x86\Release\
 AppUi
 none
 false
 TRACE
-D:\GitHub\Win_Capture\AppUi\App.xaml
+D:\Projects\CSharp\Win_Capture\AppUi\App.xaml
 17-466166899
 
 261895619160
-19837932253
+19161576523
 Controls\Button.xaml;Controls\Window\PauseButton.xaml;Controls\Window\RecordButton.xaml;Controls\Window\TextDialog.xaml;Controls\Window\WindowControlBox.xaml;View\ConfigurationWindow.xaml;View\MainWindow.xaml;Window\Window.xaml;xaml_icons\app.xaml;xaml_icons\cursor.xaml;xaml_icons\folder.xaml;xaml_icons\loop.xaml;xaml_icons\pausesvgrepocom.xaml;xaml_icons\playbuttonsvgrepocom.xaml;xaml_icons\settings.xaml;xaml_icons\soundwave.xaml;xaml_icons\today.xaml;
 
 False
